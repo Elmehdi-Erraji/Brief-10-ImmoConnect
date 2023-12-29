@@ -1,12 +1,12 @@
 create database immoConnect;
 
-create table role(
+create table roles(
 
     Id int PRIMARY KEY ,
     name varchar(100)
 );
 
-create table user(
+create table users(
     id INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(255),
     email VARCHAR(255),
