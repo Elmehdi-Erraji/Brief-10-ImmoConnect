@@ -539,7 +539,7 @@ select:disabled {
 [type="reset"],
 [type="submit"],
 button {
-    -webkit-appearance: button;
+    -webkit-appearanc: button;
 }
 [type="button"]:not(:disabled),
 [type="reset"]:not(:disabled),
@@ -590,7 +590,7 @@ legend + * {
 }
 [type="search"] {
     outline-offset: -2px;
-    -webkit-appearance: textfield;
+    -webkit-appearanc: textfield;
 }
 ::-webkit-search-decoration {
     -webkit-appearance: none;
@@ -604,7 +604,7 @@ legend + * {
 }
 ::file-selector-button {
     font: inherit;
-    -webkit-appearance: button;
+    -webkit-appearanc: button;
 }
 output {
     display: inline-block;
