@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 29, 2023 at 11:04 AM
+-- Generation Time: Dec 29, 2023 at 11:13 AM
 -- Server version: 8.2.0
 -- PHP Version: 8.2.13
 
@@ -37,6 +37,21 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `properties_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `role_id` (`role_id`),
+  KEY `properties_id` (`properties_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `images`
+--
+
+DROP TABLE IF EXISTS `images`;
+CREATE TABLE IF NOT EXISTS `images` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `ImgUrl` varchar(255) DEFAULT NULL,
+  `properties_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
   KEY `properties_id` (`properties_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
