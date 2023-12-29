@@ -19,7 +19,7 @@
     <main>
 
     <!-- jumbotron -->
-        <div class="jumbotron jumbotron-fluid" style="background-image:url('/public/img/cover-img.jpg');background-size: cover;background-position: center;height: 70vh;display: flex; align-items: center;">
+        <div class="jumbotron jumbotron-fluid" style="background-image:url('/public/imgs/cover-imgs.jpg');background-size: cover;background-position: center;height: 70vh;display: flex; align-items: center;">
             <div class="container">
                 <h1 class=" text-white text-center p-4" style="font-size:32px;font-family:roboto">Find Your Dream House</h1>
                 <div class="container-fluid  mb-5 ">
@@ -60,7 +60,7 @@
                         <div class="col-lg-4 col-md-6 mx-2 my-4 " style="border-radius: 15px;box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);max-width: 360px;">
                             <div class="property-item rounded overflow-hidden">
                                 <div class="position-relative overflow-hidden">
-                                    <a href=""><img class="img-fluid" src="/public/img/house-img-2.jpg" alt="" id="zoom" ></a>
+                                    <a href=""><imgs class="imgs-fluid" src="/public/imgs/house-imgs-1.webp" alt="property image" id="zoom" ></a>
                                 </div>
                                 <div class="p-4 pb-0">
                                     <div class="bg-custom-color rounded text-white d-inline-block" style="background-color: #1874A2">House</div>
@@ -76,7 +76,6 @@
                                         <small class="flex-fill text-center mx-2 py-2 "><i class="fa fa-bath  me-2" style="color:#1874A2"></i>2</small>
                                         <small class="flex-fill text-center  mx-3 py-2"><i class="fa-solid fa-door-open " style="color:#1874A2"></i>3</small>
                                         <small class="flex-fill text-center  mx-3 py-2"><i class="fa fa-bed  me-2" style="color:#1874A2"></i>3</small>
-
                                         <small class="flex-fill text-center  py-2"><i class="fa fa-ruler-combined  me-2" style="color:#1874A2"></i>100 m²</small>
                                     </div>
 
@@ -93,7 +92,7 @@
                         <div class="col-lg-4 col-md-6 mx-2 my-4" style="border-radius: 15px;box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);max-width: 360px;">
                             <div class="property-item rounded overflow-hidden">
                                 <div class="position-relative overflow-hidden">
-                                    <a href=""><img class="img-fluid" src="/public/img/house-img-2.jpg" alt="" id="zoom"></a>
+                                    <a href=""><imgs class="imgs-fluid" src="/public/imgs/house-imgs-1.webp" alt="property image" id="zoom"></a>
                                 </div>
                                 <div class="p-4 pb-0">
                                     <div class="bg-custom-color rounded text-white d-inline-block" style="background-color: #1874A2">House</div>
@@ -109,7 +108,6 @@
                                         <small class="flex-fill text-center mx-2 py-2 "><i class="fa fa-bath  me-2" style="color:#1874A2"></i>2</small>
                                         <small class="flex-fill text-center  mx-3 py-2"><i class="fa-solid fa-door-open " style="color:#1874A2"></i>3</small>
                                         <small class="flex-fill text-center  mx-3 py-2"><i class="fa fa-bed  me-2" style="color:#1874A2"></i>3</small>
-
                                         <small class="flex-fill text-center  py-2"><i class="fa fa-ruler-combined  me-2" style="color:#1874A2"></i>100 m²</small>
                                     </div>
 
@@ -127,7 +125,7 @@
                         <div class="col-lg-4 col-md-6 mx-2 my-4" style="border-radius: 15px;box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);max-width: 360px;">
                             <div class="property-item rounded overflow-hidden">
                                 <div class="position-relative overflow-hidden">
-                                    <a href=""><img class="img-fluid" src="/public/img/house-img-2.jpg" alt="" id="zoom"></a>
+                                    <a href=""><imgs class="imgs-fluid" src="/public/imgs/house-imgs-1.webp" alt="property image" id="zoom"></a>
                                 </div>
                                 <div class="p-4 pb-0">
                                     <div class="bg-custom-color rounded text-white d-inline-block" style="background-color: #1874A2">House</div>
@@ -143,7 +141,6 @@
                                         <small class="flex-fill text-center mx-2 py-2 "><i class="fa fa-bath  me-2" style="color:#1874A2"></i>2</small>
                                         <small class="flex-fill text-center  mx-3 py-2"><i class="fa-solid fa-door-open " style="color:#1874A2"></i>3</small>
                                         <small class="flex-fill text-center  mx-3 py-2"><i class="fa fa-bed  me-2" style="color:#1874A2"></i>3</small>
-
                                         <small class="flex-fill text-center  py-2"><i class="fa fa-ruler-combined  me-2" style="color:#1874A2"></i>100 m²</small>
                                     </div>
 
@@ -160,7 +157,7 @@
                         <div class="col-lg-4 col-md-6 mx-2 my-4 " style="border-radius: 15px;box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);max-width: 360px;">
                             <div class="property-item rounded overflow-hidden">
                                 <div class="position-relative overflow-hidden">
-                                    <a href=""><img class="img-fluid" src="/public/img/house-img-2.jpg" alt="" id="zoom"></a>
+                                    <a href=""><imgs class="imgs-fluid" src="/public/imgs/house-imgs-1.webp" alt="property image" id="zoom"></a>
                                 </div>
                                 <div class="p-4 pb-0">
                                     <div class="bg-custom-color rounded text-white d-inline-block" style="background-color: #1874A2">House</div>
@@ -176,7 +173,6 @@
                                         <small class="flex-fill text-center mx-2 py-2 "><i class="fa fa-bath  me-2" style="color:#1874A2"></i>2</small>
                                         <small class="flex-fill text-center  mx-3 py-2"><i class="fa-solid fa-door-open " style="color:#1874A2"></i>3</small>
                                         <small class="flex-fill text-center  mx-3 py-2"><i class="fa fa-bed  me-2" style="color:#1874A2"></i>3</small>
-
                                         <small class="flex-fill text-center  py-2"><i class="fa fa-ruler-combined  me-2" style="color:#1874A2"></i>100 m²</small>
                                     </div>
 
@@ -193,7 +189,7 @@
                         <div class="col-lg-4 col-md-6 mx-2 my-4 " style="border-radius: 15px;box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);max-width: 360px;">
                             <div class="property-item rounded overflow-hidden">
                                 <div class="position-relative overflow-hidden">
-                                    <a href=""><img class="img-fluid" src="/public/img/house-img-2.jpg" alt="" id="zoom"></a>
+                                    <a href=""><imgs class="imgs-fluid" src="/public/imgs/house-imgs-1.webp" alt="property image" id="zoom"></a>
                                 </div>
                                 <div class="p-4 pb-0">
                                     <div class="bg-custom-color rounded text-white d-inline-block" style="background-color: #1874A2">House</div>
@@ -209,7 +205,6 @@
                                         <small class="flex-fill text-center mx-2 py-2 "><i class="fa fa-bath  me-2" style="color:#1874A2"></i>2</small>
                                         <small class="flex-fill text-center  mx-3 py-2"><i class="fa-solid fa-door-open " style="color:#1874A2"></i>3</small>
                                         <small class="flex-fill text-center  mx-3 py-2"><i class="fa fa-bed  me-2" style="color:#1874A2"></i>3</small>
-
                                         <small class="flex-fill text-center  py-2"><i class="fa fa-ruler-combined  me-2" style="color:#1874A2"></i>100 m²</small>
                                     </div>
 
@@ -226,7 +221,7 @@
                         <div class="col-lg-4 col-md-6 mx-2 my-4 " style="border-radius: 15px;box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);max-width: 360px;">
                             <div class="property-item rounded overflow-hidden">
                                 <div class="position-relative overflow-hidden">
-                                    <a href=""><img class="img-fluid" src="/public/img/house-img-2.jpg" alt="" id="zoom"></a>
+                                    <a href=""><imgs class="imgs-fluid" src="/public/imgs/house-imgs-1.webp" alt="property image" id="zoom"></a>
                                 </div>
                                 <div class="p-4 pb-0">
                                     <div class="bg-custom-color rounded text-white d-inline-block" style="background-color: #1874A2">House</div>
@@ -242,7 +237,6 @@
                                         <small class="flex-fill text-center mx-2 py-2 "><i class="fa fa-bath  me-2" style="color:#1874A2"></i>2</small>
                                         <small class="flex-fill text-center  mx-3 py-2"><i class="fa-solid fa-door-open " style="color:#1874A2"></i>3</small>
                                         <small class="flex-fill text-center  mx-3 py-2"><i class="fa fa-bed  me-2" style="color:#1874A2"></i>3</small>
-
                                         <small class="flex-fill text-center  py-2"><i class="fa fa-ruler-combined  me-2" style="color:#1874A2"></i>100 m²</small>
                                     </div>
 
@@ -253,11 +247,6 @@
                                 </div>
             </div>
             <!-- property-cards-end -->
-
-
-
-
-
 
     </main>
 

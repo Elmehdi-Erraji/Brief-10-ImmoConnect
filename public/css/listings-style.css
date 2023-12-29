@@ -2,6 +2,6 @@
         transition: transform .2s;
 }
 #zoom:hover{
-    transform: scale(1.5);
+    transform: scale(1.2);
 }
 
