@@ -9,7 +9,7 @@
     <meta content="Mehdi" name="author" />
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="../public/assets/images/favicon.ico">
+    <link rel="shortcut icon" href="../../public/assets/images/favicon.ico">
 
     <!-- Theme Config Js -->
     <script src="../public/assets/js/config.js"></script>
@@ -23,7 +23,7 @@
 
 <body>
     <!-- Begin page -->
-    <div class="wrapper">
+    <div class="wrapper1">
 
         
       <!-- ========== Topbar Start ========== -->
@@ -243,62 +243,31 @@
     
           
                 <li class="side-nav-item">
-                <a href="dashboard.php" class="side-nav-link">
+                <a href="profile.php" class="side-nav-link">
                     <i class="ri-dashboard-3-line"></i>
-                    <span> Dashboard </span>
+                    <span> Acount</span>
                 </a>
             </li>
                 <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarUsers" aria-expanded="false" aria-controls="sidebarUsers" class="side-nav-link">
-                    <i class="ri-group-2-line"></i>
-                    <span> Users </span>
-                    <span class="menu-arrow"></span>
+                <a href="../views/chat/users.php" class="side-nav-link">
+                <i class="ri-mail-line"></i>
+                    <span> Messages </span>
                 </a>
-                <div class="collapse" id="sidebarUsers">
-                    <ul class="side-nav-second-level">
-                        <li>
-                            <a href="user-add.php">Add User</a>
-                        </li>
-                        <li>
-                            <a href="user-list.php">User List</a>
-                        </li>
-                    </ul>
-                </div>
             </li>
     
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarProjects" aria-expanded="false" aria-controls="sidebarProjects" class="side-nav-link">
-                    <i class="ri-pages-line"></i>
-                    <span> Books </span>
-                    <span class="menu-arrow"></span>
+                    <i class="ri-folder-line"></i>
+                    <span> Listing </span>
                 </a>
-                <div class="collapse" id="sidebarProjects">
-                    <ul class="side-nav-second-level">
-                        <li>
-                            <a href="book-add.php">Add a Book</a>
-                        </li>
-                        <li>
-                            <a href="book-list.php">Books List</a>
-                        </li>
-                    </ul>
-                </div>
             </li>
            
           
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarServices" aria-expanded="false" aria-controls="sidebarServices" class="side-nav-link">
-                    <i class="ri-pencil-ruler-2-line"></i>
-                    <span> Reservations </span>
-                    <span class="menu-arrow"></span>
+                <i class="ri-shut-down-line"></i>
+                    <span> Log Out</span>
                 </a>
-                <div class="collapse" id="sidebarServices">
-                    <ul class="side-nav-second-level">
-                       
-                        <li>
-                            <a href="reservations-list.php">Reservations List</a>
-                        </li>
-                    </ul>
-                </div>
             </li>
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarFAQ" aria-expanded="false" aria-controls="sidebarFAQ" class="side-nav-link">
