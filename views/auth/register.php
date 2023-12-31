@@ -54,10 +54,6 @@
                                                 <input class="form-control" type="email" name="email"  id="emailaddress" required="" placeholder="Enter your email">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="emailaddress" class="form-label">Phone number</label>
-                                                <input class="form-control" type="phone" name="phone"  id="phone" required="" placeholder="Enter your phone number">
-                                            </div>
-                                            <div class="mb-3">
                                                 <label for="password" class="form-label">Password</label>
                                                 <input class="form-control" type="password"  name="password" required="" id="password" placeholder="Enter your password">
                                             </div>
