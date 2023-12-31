@@ -42,16 +42,16 @@
                                         <!-- form -->
                                         <form action="../../app/controllers/UserController.php" method="post">
                                             <div class="mb-3">
-                                                <label for="fullname" class="form-label">First Name</label>
-                                                <input class="form-control" type="text" name="first-name" id="first-name" placeholder="Enter your first name" required="">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="fullname" class="form-label">First Name</label>
-                                                <input class="form-control" type="text" name="last-name" id="first-name" placeholder="Enter your last name" required="">
+                                                <label for="fullname" class="form-label">Username</label>
+                                                <input class="form-control" type="text" name="username" id="username" placeholder="Enter your first name" required="">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="emailaddress" class="form-label">Email address</label>
                                                 <input class="form-control" type="email" name="email"  id="emailaddress" required="" placeholder="Enter your email">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="emailaddress" class="form-label">Phone number</label>
+                                                <input class="form-control" type="phone" name="phone_number"  id="phone_number" required="" placeholder="Enter your phone number">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="password" class="form-label">Password</label>
