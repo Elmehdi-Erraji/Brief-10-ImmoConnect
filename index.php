@@ -1,25 +1,9 @@
 <?php
+// Include necessary files and configurations
+require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/Routes/Route.php'; // Adjust the path as needed
 
-echo "banana";
-// require_once __DIR__ . '/vendor/autoload.php';
+use MVC\Routes\Route;
 
-// use   App\Router\Router;
-
-// $router = new Router();
-
-
-// $router->get('/', function () {
-//     require'views/home.php';
-// });
-
-// $router->get('/views/about', function () {
-//     echo 'about page';
-// });
-
-
-// $router->view('/home', 'home');
-// $router->view('/about', 'about');
-// $router->view('/contact', 'contact');
-
-// $router->run();
-
+// Initialize the routing mechanism
+new Route();

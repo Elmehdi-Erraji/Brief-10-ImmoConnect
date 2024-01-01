@@ -40,7 +40,7 @@
                                         <br>
 
                                         <!-- form -->
-                                        <form action="../../app/controllers/UserController.php" method="post">
+                                        <form action="/register" method="post">
                                             <div class="mb-3">
                                                 <label for="fullname" class="form-label">Username</label>
                                                 <input class="form-control" type="text" name="username" id="username" placeholder="Enter your first name" required="">

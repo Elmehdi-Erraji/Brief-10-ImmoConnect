@@ -8,6 +8,9 @@ use App\services\UserServices;
 class UserController{
 
     public function createUser($postData) {
+
+        var_dump($postData);
+        
         // Retrieve form data
         $username = $postData['username'] ?? '';
         $email = $postData['email'] ?? '';
@@ -38,27 +41,12 @@ class UserController{
             return false;
         }
     }
-
-}
-
-
-
-// Register form handling
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
-    // Instantiate the UserController
-    $userController = new UserController();
-
-    // Call the createUser method in UserController
-    $result = $userController->createUser($_POST);
-
-    if ($result) {
-        // User created successfully
-        header('Location: /Brief-9-library-managment/views/auth/login.php');
-        exit();
-    } else {
-        echo "something went wrong buddy";
-        // // User creation failed
-        // header('Location: signup.php?error=failed_creation');
-        exit();
+    public function showRegisterForm()
+    {
+        // Display the registration form HTML here
+        include __DIR__ . '/../Views/register_form.php'; // Adjust path to your register form view
     }
+
 }
+
+
