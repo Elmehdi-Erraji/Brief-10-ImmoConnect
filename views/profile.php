@@ -249,7 +249,7 @@
                 </a>
             </li>
                 <li class="side-nav-item">
-                <a href="/Brief-10-ImmoConnect/app/routes/../views/chat/users.php" class="side-nav-link">
+                <a href="users" class="side-nav-link">
                 <i class="ri-mail-line"></i>
                     <span> Messages </span>
                 </a>

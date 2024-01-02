@@ -8,6 +8,7 @@ $router->setRoutes([
     'GET'=>[
         ''=>['HomeController' , 'index'],
         'home'=>['HomeController' , 'index'],
+        'users'=>['HomeController' , 'user'],
 
 
     ],
