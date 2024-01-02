@@ -1,40 +1,47 @@
-<?php 
+<?php
 
-namespace app\config;
 
+namespace App\config;
+require_once __DIR__ . '/../../vendor/autoload.php';
+
+use Dotenv\Dotenv;
 use PDO;
 use PDOException;
 
+$dotenv = Dotenv::createImmutable(__DIR__ . "/../..");
+$dotenv->load();
+
 class db_conn{
+    private static $connection;
 
+    private function __construct()
+    {
+        $dbHost = $_ENV['DB_HOST'];
+        $dbUser = $_ENV['DB_USER'];
+        $dbPassword = $_ENV['DB_PASSWORD'];
+        $dbName = $_ENV['DB_NAME'];
 
-   private static $connection;
-
-   private function __construct()
-  {
-    $db_host='localhost';
-    $db_user='root';
-    $db_password='';
-    $db_name='immoconnect';
-
-    try{
-        $dsn="mysql:host=" . $db_host .";dbname=" . $db_name;
-        self::$connection=new PDO($dsn,$db_user,$db_password);
-        
-    }
-    catch(PDOException $e){
-        echo"connection failed: " . $e->getMessage();
+        try {
+        self::$connection = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPassword);
+        self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        }catch(PDOException $e){
+            die("Connection faild". $e->getMessage());
+        }
     }
 
-   }
-
-   public static function getconnection(){
-       if(!self::$connection){
-        new self();
-       }
-       else{
+    public static function getConnection(){
+        if(!self::$connection){
+            new self();
+        }
         return self::$connection;
-       }
-   }
+    }
 
+}
+
+//usage without instantiating the class
+
+$connection = db_conn::getConnection();
+
+if($connection){
+    echo "Db is connected";
 }
