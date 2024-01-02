@@ -8,20 +8,20 @@
                             <!-- Logo light -->
                             <a href="#" class="logo-light">
                                 <span class="logo-lg">
-                                    <img src="/Brief-10-ImmoConnect/app/routes/../../public/assets/images/logo-sm.png" alt="logo">
+                                    <img src="../../public/assets/images/logo-sm.png" alt="logo">
                                 </span>
                                 <span class="logo-sm">
-                                    <img src="/Brief-10-ImmoConnect/app/routes/../../public/assets/images/logo-sm.png" alt="small logo">
+                                    <img src="../../public/assets/images/logo-sm.png" alt="small logo">
                                 </span>
                             </a>
 
                             <!-- Logo Dark -->
                             <a href="#" class="logo-dark">
                                 <span class="logo-lg">
-                                    <img src="/Brief-10-ImmoConnect/app/routes/../../public/assets/images/logo-sm.png" alt="dark logo">
+                                    <img src="../../public/assets/images/logo-sm.png" alt="dark logo">
                                 </span>
                                 <span class="logo-sm">
-                                    <img src="/Brief-10-ImmoConnect/app/routes/../../public/assets/images/logo-sm.png" alt="small logo">
+                                    <img src="../../public/assets/images/logo-sm.png" alt="small logo">
                                 </span>
                             </a>
                         </div>
@@ -68,7 +68,7 @@
                         <li class="dropdown">
                             <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button"
                                 aria-haspopup="false" aria-expanded="false">
-                                <img src="/Brief-10-ImmoConnect/app/routes/../../public/assets/images/flags/us.jpg" alt="user-image" class="me-0 me-sm-1" height="12">
+                                <img src="../../public/assets/images/flags/us.jpg" alt="user-image" class="me-0 me-sm-1" height="12">
                                 <span class="align-middle d-none d-lg-inline-block">English</span> <i
                                     class="ri-arrow-down-s-line d-none d-sm-inline-block align-middle"></i>
                             </a>
@@ -76,25 +76,25 @@
 
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item">
-                                    <img src="/Brief-10-ImmoConnect/app/routes/../../public/assets/images/flags/germany.jpg" alt="user-image" class="me-1" height="12"> <span
+                                    <img src="../../public/assets/images/flags/germany.jpg" alt="user-image" class="me-1" height="12"> <span
                                         class="align-middle">German</span>
                                 </a>
 
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item">
-                                    <img src="/Brief-10-ImmoConnect/app/routes/../../public/assets/images/flags/italy.jpg" alt="user-image" class="me-1" height="12"> <span
+                                    <img src="../../public/assets/images/flags/italy.jpg" alt="user-image" class="me-1" height="12"> <span
                                         class="align-middle">Italian</span>
                                 </a>
 
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item">
-                                    <img src="/Brief-10-ImmoConnect/app/routes/../../public/assets/images/flags/spain.jpg" alt="user-image" class="me-1" height="12"> <span
+                                    <img src="../../public/assets/images/flags/spain.jpg" alt="user-image" class="me-1" height="12"> <span
                                         class="align-middle">Spanish</span>
                                 </a>
 
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item">
-                                    <img src="/Brief-10-ImmoConnect/app/routes/../../public/assets/images/flags/russia.jpg" alt="user-image" class="me-1" height="12"> <span
+                                    <img src="../../public/assets/images/flags/russia.jpg" alt="user-image" class="me-1" height="12"> <span
                                         class="align-middle">Russian</span>
                                 </a>
 

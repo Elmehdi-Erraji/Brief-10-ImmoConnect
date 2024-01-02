@@ -12,6 +12,8 @@ $router->setRoutes([
         'login'=>['AuthController' , 'signin'],
         'register'=>['AuthController' , 'signup'],
         'forgetPassword'=>['AuthController' , 'forgetPassword'],
+        'dashboard'=>['AuthController' , 'dashboard'],
+
     ],
     'POST'=>[
         'register'=>['UserController' , 'register'],
