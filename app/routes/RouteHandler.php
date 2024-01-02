@@ -15,6 +15,7 @@ $router->setRoutes([
     ],
     'POST'=>[
         'register'=>['UserController' , 'register'],
+        'login'=>['UserController' , 'login'],
     ]
 ]);
 if (isset($_GET['url'])) {

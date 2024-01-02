@@ -41,16 +41,16 @@
                                         </p>
 
                                         <!-- form -->
-                                        <form action="../../app/controllers/UserController.php" method="post">
+                                        <form action="login" method="post">
                                             <div class="mb-3">
                                                 <label for="emailaddress" class="form-label">Email address</label>
                                                 <input class="form-control" type="email" name="email" id="emailaddress" required=""
                                                     placeholder="Enter your email">
                                             </div>
                                             <div class="mb-3">
-                                                <a href="forgetPassword.php" class="text-muted float-end"><small>Forgot
-                                                        your
-                                                        password?</small></a>
+                                                <a href="forgetPassword" class="text-muted float-end"><small>Forgot your password?</small></a>
+                                                       
+                                                       
                                                 <label for="password" class="form-label">Password</label>
                                                 <input class="form-control" type="password" name="password" required="" id="password"
                                                     placeholder="Enter your password">
@@ -87,7 +87,7 @@
             </div>
             <div class="row">
                 <div class="col-12 text-center">
-                    <p class="text-dark-emphasis">Don't have an account? <a href="register.php"
+                    <p class="text-dark-emphasis">Don't have an account? <a href="register"
                             class="text-dark fw-bold ms-1 link-offset-3 text-decoration-underline"><b>Sign up</b></a>
                     </p>
                 </div> <!-- end col -->
