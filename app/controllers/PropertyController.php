@@ -7,8 +7,4 @@ require './vendor/autoload.php';
 class PropertyController{
     
 
-
-
-
-
 }

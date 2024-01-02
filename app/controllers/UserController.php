@@ -7,8 +7,8 @@ use App\Models\User;
 use App\services\UserServices;
 class UserController{
 
-    public function register($postData) {
-       
+    public function register() {
+        $postData = $_POST ?? [];
         $username = $postData['username'] ?? '';
         $email = $postData['email'] ?? '';
         $phone_number = $postData['phone_number'] ?? '';
@@ -31,7 +31,8 @@ class UserController{
         // Return the result
         if ($result) {
             // User created successfully
-            return true;
+            header('location:login');
+            exit();
         } else {
             // User creation failed
             return false;

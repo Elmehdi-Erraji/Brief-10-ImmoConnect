@@ -4,20 +4,20 @@
 <!-- Brand Logo Light -->
 <a href="#" class="logo logo-light">
     <span class="logo-lg">
-        <img src="../../public/assets/images/logo-sm.png" alt="logo">
+        <img src="/Brief-10-ImmoConnect/app/routes/../../public/assets/images/logo-sm.png" alt="logo">
     </span>
     <span class="logo-sm">
-        <img src="../../public/assets/images/logo-sm.png" alt="small logo">
+        <img src="/Brief-10-ImmoConnect/app/routes/../../public/assets/images/logo-sm.png" alt="small logo">
     </span>
 </a>
 
 <!-- Brand Logo Dark -->
 <a href="#" class="logo logo-dark">
     <span class="logo-lg">
-        <img src="../../public/assets/images/logo-sm.png" alt="dark logo">
+        <img src="/Brief-10-ImmoConnect/app/routes/../../public/assets/images/logo-sm.png" alt="dark logo">
     </span>
     <span class="logo-sm">
-        <img src="../../public/assets/images/logo-sm.png" alt="small logo">
+        <img src="/Brief-10-ImmoConnect/app/routes/../../public/assets/images/logo-sm.png" alt="small logo">
     </span>
 </a>
 

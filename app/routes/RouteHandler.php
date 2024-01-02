@@ -9,10 +9,12 @@ $router->setRoutes([
         ''=>['HomeController' , 'index'],
         'home'=>['HomeController' , 'index'],
         'users'=>['HomeController' , 'user'],
-
-
+        'login'=>['AuthController' , 'signin'],
+        'register'=>['AuthController' , 'signup'],
     ],
-    'POST'=>[]
+    'POST'=>[
+        'register'=>['UserController' , 'register'],
+    ]
 ]);
 if (isset($_GET['url'])) {
     $uri = trim($_GET['url'], '/');

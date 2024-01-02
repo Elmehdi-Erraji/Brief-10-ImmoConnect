@@ -9,16 +9,16 @@
     <meta content="Techzaa" name="author" />
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="../../public/assets/images/favicon.ico">
+    <link rel="shortcut icon" href="/Brief-10-ImmoConnect/app/routes/../../public/assets/images/favicon.ico">
 
     <!-- Theme Config Js -->
-    <script src="../../public/assets/js/config.js"></script>
+    <script src="/Brief-10-ImmoConnect/app/routes/../../public/assets/js/config.js"></script>
 
     <!-- App css -->
-    <link href="../../public/assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
+    <link href="/Brief-10-ImmoConnect/app/routes/../../public/assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
 
     <!-- Icons css -->
-    <link href="../../public/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Brief-10-ImmoConnect/app/routes/../../public/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body class="authentication-bg">
@@ -30,7 +30,7 @@
                     <div class="card overflow-hidden bg-opacity-25">
                         <div class="row g-0">
                             <div class="col-lg-6 d-none d-lg-block p-2">
-                                <img src="../../public/assets/images/auth-img.jpg" alt="" class="img-fluid rounded h-100">
+                                <img src="/Brief-10-ImmoConnect/app/routes/../../public/assets/images/auth-img.jpg" alt="" class="img-fluid rounded h-100">
                             </div>
                             <div class="col-lg-6">
                                 <div class="d-flex flex-column h-100">
@@ -40,7 +40,7 @@
                                         <br>
 
                                         <!-- form -->
-                                        <form action="/register" method="post">
+                                        <form action="register" method="post">
                                             <div class="mb-3">
                                                 <label for="fullname" class="form-label">Username</label>
                                                 <input class="form-control" type="text" name="username" id="username" placeholder="Enter your first name" required="">
@@ -110,7 +110,7 @@
     <!-- Vendor js -->
 
     <!-- App js -->
-    <script src="../../public/assets/js/app.min.js"></script>
+    <script src="/Brief-10-ImmoConnect/app/routes/../../public/assets/js/app.min.js"></script>
 
 </body>
 

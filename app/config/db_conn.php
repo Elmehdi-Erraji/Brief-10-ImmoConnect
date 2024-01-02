@@ -1,13 +1,9 @@
 <?php
-<<<<<<< HEAD
 
 
 namespace App\config;
 require_once __DIR__ . '/../../vendor/autoload.php';
-=======
-namespace App\config;
-require_once __DIR__ . '/../../../vendor/autoload.php';
->>>>>>> fatima
+
 
 use Dotenv\Dotenv;
 use PDO;
