@@ -3,8 +3,12 @@
 namespace App\Controllers;
 require_once __DIR__ . '/../../vendor/autoload.php';
 
+use App\config\db_conn;
 use App\Models\User;
 use App\services\UserServices;
+
+use PDO;
+use PDOException;
 class UserController{
 
     public function register() {
@@ -61,7 +65,7 @@ class UserController{
             // Set session variables
             $_SESSION['user_id'] = $user['id'];
             
-            $_SESSION['fullname'] = $user['fullname'];
+            $_SESSION['username'] = $user['username'];
             $_SESSION['email'] = $user['email'];
 
             // Get user's role
@@ -87,6 +91,37 @@ class UserController{
            
             exit();
            
+        }
+    }
+
+
+
+
+
+
+
+
+    public function fetchUsers() {
+        try {
+            $dbConnection = db_conn::getConnection();
+            
+            // Prepare SQL query
+            $query = "SELECT * FROM users";
+    
+            // Execute the query using PDO
+            $statement = $dbConnection->query($query);
+    
+            // Fetch data as associative array
+            $data = $statement->fetchAll(PDO::FETCH_ASSOC);
+    
+            // Set response header to JSON
+            header('Content-Type: application/json');
+    
+            // Output data as JSON
+            echo json_encode($data);
+        } catch (PDOException $e) {
+            // Handle any database connection errors
+            die("Query failed: " . $e->getMessage());
         }
     }
 

@@ -16,19 +16,16 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 
 <head>
     <meta charset="utf-8" />
-    <title>Dashboard </title>
+    <title>Profile </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="dashboard " name="description" />
-    <meta content="Techzaa" name="author" />
+    <meta content="fully responsive." name="description" />
+    <meta content="Mehdi" name="author" />
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="/Brief-10-ImmoConnect/app/routes/../../public/assets/images/favicon.ico">
-    <link rel="shortcut icon" href="/Brief-10-ImmoConnect/app/routes/../../public/assets/images/">
-    <!-- Daterangepicker css -->
-    <link rel="stylesheet" href="/Brief-10-ImmoConnect/app/routes/../../public/assets/vendor/daterangepicker/daterangepicker.css">
+    <!-- <link rel="stylesheet" href="/Brief-10-ImmoConnect/app/routes/../../public/csschat/chatbox.css"> -->
 
-    <!-- Vector Map css -->
-    <link rel="stylesheet" href="/Brief-10-ImmoConnect/app/routes/../../public/assets/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css">
+    <link rel="shortcut icon" href="/Brief-10-ImmoConnect/app/routes/../../public/assets/images/favicon.ico">
+
 
     <!-- Theme Config Js -->
     <script src="/Brief-10-ImmoConnect/app/routes/../../public/assets/js/config.js"></script>
@@ -36,6 +33,10 @@ require_once __DIR__ . '/../../vendor/autoload.php';
     <!-- App css -->
     <link href="/Brief-10-ImmoConnect/app/routes/../../public/assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
 
+    <!-- Icons css -->
+    <link href="/Brief-10-ImmoConnect/app/routes/../../public/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+
+  
     <!-- Icons css -->
     <link href="/Brief-10-ImmoConnect/app/routes/../../public/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
 </head>
@@ -220,21 +221,22 @@ require_once __DIR__ . '/../../vendor/autoload.php';
                                             }
                                         };
 
-                                        xhr.open('GET', '/Brief-9-library-managment/app/database/fetchdata.php?action=fetchData', true);
+                                        xhr.open('GET', 'fetchUsers', true);
                                         xhr.send();
                                     }
 
-                                    // const roleNames = {
-                                    //     1: 'Admin',
-                                    //     2: 'Seller',
-                                    //     3: 'Client'
-                                    // };
+                                    const roleNames = {
+                                        1: 'Admin',
+                                        2: 'Seller',
+                                        3: 'Client'
+                                    };
 
                                         function populateTable(data) {
                                            
                                         var tableBody = document.getElementById('tableBody');
                                         tableBody.innerHTML = '';
 
+                                        console.log(data);
                                         data.forEach(function(row) {
                                             var newRow = document.createElement('tr');
 
@@ -243,7 +245,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
                                             <td>${row.username}</td>
                                             <td>${row.email}</td>
                                             <td>${row.phone}</td>
-                                            <td>${row.role}</td>
+                                            <td>${row.role_id}</td>
                                             <td>${row.statut}</td>
                                             <td >
                                                 <a href="../../app/controllers/UserController.php?action=delete&user_id=${row.id}" class="btn btn-danger">Delete</a>
@@ -278,20 +280,10 @@ require_once __DIR__ . '/../../vendor/autoload.php';
                         <!-- Theme Settings -->
 
 
-                        <!-- Vendor js -->
-                        <script src="/Brief-10-ImmoConnect/app/routes/../../public/assets//js/vendor.min.js"></script>
-
-                        <!-- Daterangepicker js -->
-                        <script src="/Brief-10-ImmoConnect/app/routes/../../public/assets//vendor/daterangepicker/moment.min.js"></script>
-                        <script src="/Brief-10-ImmoConnect/app/routes/../../public/assets//vendor/daterangepicker/daterangepicker.js"></script>
-
-
-                        <!-- Dashboard App js -->
-                        <script src="/Brief-10-ImmoConnect/app/routes/../../public/assets//js/pages/dashboard.js"></script>
-
-
-                        <!-- App js -->
-                        <script src="/Brief-10-ImmoConnect/app/routes/../../public/assets//js/app.min.js"></script>
+                    <!-- Vendor js -->
+                <script src="/Brief-10-ImmoConnect/app/routes/../../public/assets/js/vendor.min.js"></script>
+                <!-- App js -->
+                <script src="/Brief-10-ImmoConnect/app/routes/../../public/assets/js/app.min.js"></script>
 
 </body>
 
