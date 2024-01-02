@@ -10,19 +10,19 @@
     <meta content="Mehdi" name="author" />
 
     <!-- App favicon -->
-    <link rel="stylesheet" href="../../public/csschat/chatbox.css">
+    <link rel="stylesheet" href="..//Brief-10-ImmoConnect/app/routes/../../public/csschat/chatbox.css">
 
-    <link rel="shortcut icon" href="../../public/assets/images/favicon.ico">
+    <link rel="shortcut icon" href="..//Brief-10-ImmoConnect/app/routes/../../public/assets/images/favicon.ico">
 
 
     <!-- Theme Config Js -->
-    <script src="../../public/assets/js/config.js"></script>
+    <script src="..//Brief-10-ImmoConnect/app/routes/../../public/assets/js/config.js"></script>
 
     <!-- App css -->
-    <link href="../../public/assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
+    <link href="..//Brief-10-ImmoConnect/app/routes/../../public/assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
 
     <!-- Icons css -->
-    <link href="../../public/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="..//Brief-10-ImmoConnect/app/routes/../../public/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
@@ -46,20 +46,20 @@
                     <!-- Logo light -->
                     <a href="index.html" class="logo-light">
                         <span class="logo-lg">
-                            <img src="../../public/assets/images/logo-sm.png" alt="small logo">
+                            <img src="..//Brief-10-ImmoConnect/app/routes/../../public/assets/images/logo-sm.png" alt="small logo">
                         </span>
                         <span class="logo-sm">
-                            <img src="../../public/assets/images/logo-sm.png" alt="small logo">
+                            <img src="..//Brief-10-ImmoConnect/app/routes/../../public/assets/images/logo-sm.png" alt="small logo">
                         </span>
                     </a>
 
                     <!-- Logo Dark -->
                     <a href="index.html" class="logo-dark">
                         <span class="logo-lg">
-                            <img src="../../public/assets/images/logo-sm.png" alt="dark logo">
+                            <img src="..//Brief-10-ImmoConnect/app/routes/../../public/assets/images/logo-sm.png" alt="dark logo">
                         </span>
                         <span class="logo-sm">
-                            <img src="../../../public/assets/images/logo-sm.png" alt="small logo">
+                            <img src="../..//Brief-10-ImmoConnect/app/routes/../../public/assets/images/logo-sm.png" alt="small logo">
                         </span>
                     </a>
                 </div>
@@ -130,7 +130,7 @@
                                     <div class="d-flex align-items-center">
                                         <div class="flex-shrink-0">
                                             <div class="notify-icon">
-                                                <img src="../../public/assets/images/users/avatar-1.jpg" class="img-fluid rounded-circle"
+                                                <img src="..//Brief-10-ImmoConnect/app/routes/../../public/assets/images/users/avatar-1.jpg" class="img-fluid rounded-circle"
                                                     alt="" />
                                             </div>
                                         </div>
@@ -152,7 +152,7 @@
                                     <div class="d-flex align-items-center">
                                         <div class="flex-shrink-0">
                                             <div class="notify-icon">
-                                                <img src="../../public/assets/images/users/avatar-5.jpg" class="img-fluid rounded-circle"
+                                                <img src="..//Brief-10-ImmoConnect/app/routes/../../public/assets/images/users/avatar-5.jpg" class="img-fluid rounded-circle"
                                                     alt="" />
                                             </div>
                                         </div>
@@ -182,7 +182,7 @@
                     <a class="nav-link dropdown-toggle arrow-none nav-user" data-bs-toggle="dropdown" href="#" role="button"
                         aria-haspopup="false" aria-expanded="false">
                         <span class="account-user-avatar">
-                            <img src="../../public/assets/images/users/avatar-1.jpg" alt="user-image" width="32" class="rounded-circle">
+                            <img src="..//Brief-10-ImmoConnect/app/routes/../../public/assets/images/users/avatar-1.jpg" alt="user-image" width="32" class="rounded-circle">
                         </span>
                         <span class="d-lg-block d-none">
                             <h5 class="my-0 fw-normal">Thomson <i
@@ -226,20 +226,20 @@
             <!-- Brand Logo Light -->
             <a href="index.html" class="logo logo-light">
                 <span class="logo-lg">
-                    <img src="../../public/assets/images/logo-sm.png" alt="logo">
+                    <img src="..//Brief-10-ImmoConnect/app/routes/../../public/assets/images/logo-sm.png" alt="logo">
                 </span>
                 <span class="logo-sm">
-                    <img src="../../public/assets/images/logo-sm.png" alt="small logo">
+                    <img src="..//Brief-10-ImmoConnect/app/routes/../../public/assets/images/logo-sm.png" alt="small logo">
                 </span>
             </a>
 
             <!-- Brand Logo Dark -->
             <a href="index.html" class="logo logo-dark">
                 <span class="logo-lg">
-                    <img src="../../public/assets/images/logo-sm.png" alt="dark logo">
+                    <img src="..//Brief-10-ImmoConnect/app/routes/../../public/assets/images/logo-sm.png" alt="dark logo">
                 </span>
                 <span class="logo-sm">
-                    <img src="../../public/assets/images/logo-sm.png" alt="small logo">
+                    <img src="..//Brief-10-ImmoConnect/app/routes/../../public/assets/images/logo-sm.png" alt="small logo">
                 </span>
             </a>
 
@@ -402,12 +402,12 @@
 
    
     <!-- Vendor js -->
-    <script src="../../public/assets/js/vendor.min.js"></script>
+    <script src="..//Brief-10-ImmoConnect/app/routes/../../public/assets/js/vendor.min.js"></script>
 
    
 
     <!-- App js -->
-    <script src="../../public/assets/js/app.min.js"></script>
+    <script src="..//Brief-10-ImmoConnect/app/routes/../../public/assets/js/app.min.js"></script>
 
 </body>
 
