@@ -7,5 +7,4 @@ interface DaoInterface{
     public function findById($id);
     public function findAll();
     public function deleteById($id);
-
 }
