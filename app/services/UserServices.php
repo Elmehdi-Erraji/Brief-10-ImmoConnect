@@ -9,7 +9,8 @@ use App\Models\User;
 use App\DAO\UserDAO;
 
 use App\config\db_conn;
-
+use PDO;
+use PDOException;
 
 class UserServices implements UserDAO{
 
@@ -53,6 +54,26 @@ class UserServices implements UserDAO{
     }
     public function deleteUser($id) {
         echo $id;
+    }
+
+
+    public function getUserByEmail($email) {
+        try {
+            $query = "SELECT * FROM users WHERE email = ?";
+            $stmt = $this->db->prepare($query);
+            $stmt->execute([$email]);
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+            if ($user) {
+                return $user; // Return the user details as an associative array
+            } else {
+                return null; // User not found
+            }
+        } catch (PDOException $e) {
+            // Handle the exception appropriately
+            echo "Error: " . $e->getMessage();
+            return null;
+        }
     }
     
 }

@@ -11,9 +11,11 @@ $router->setRoutes([
         'users'=>['HomeController' , 'user'],
         'login'=>['AuthController' , 'signin'],
         'register'=>['AuthController' , 'signup'],
+        'forgetPassword'=>['AuthController' , 'forgetPassword'],
     ],
     'POST'=>[
         'register'=>['UserController' , 'register'],
+        'login'=>['UserController' , 'login'],
     ]
 ]);
 if (isset($_GET['url'])) {

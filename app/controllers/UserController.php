@@ -8,6 +8,7 @@ use App\services\UserServices;
 class UserController{
 
     public function register() {
+        if (isset($_POST['signup'])) {
         $postData = $_POST ?? [];
         $username = $postData['username'] ?? '';
         $email = $postData['email'] ?? '';
@@ -34,17 +35,59 @@ class UserController{
             header('location:login');
             exit();
         } else {
-            // User creation failed
             return false;
         }
     }
-    public function signup() {
-        echo 'test 1111';
     }
-    public function showRegisterForm()
-    {
-        // Display the registration form HTML here
-        include __DIR__ . '/../Views/register_form.php'; // Adjust path to your register form view
+   
+
+
+    public function login() {
+        $postData = $_POST ?? [];
+        $email = $postData['email'] ?? '';
+        $password = $postData['password'] ?? '';
+
+
+        // Instantiate UserDAO
+        $userServices = new UserServices();
+
+        // Get user details by email
+        $user = $userServices->getUserByEmail($email);
+
+        if ($user['password'] == $password) {
+            // Start a session
+            session_start();
+
+            // Set session variables
+            $_SESSION['user_id'] = $user['id'];
+            
+            $_SESSION['fullname'] = $user['fullname'];
+            $_SESSION['email'] = $user['email'];
+
+            // Get user's role
+            $role = $user['role_id'];
+
+            $_SESSION['role_id'] = $role;
+           
+            // Redirect based on user's role
+            if ($role === 1) {
+                header('Location: dashboard.php');
+                exit();
+            } elseif ($role === 2) {
+                header('Location: listings.php');
+                exit();
+            } else {
+                header('Location: error');
+                exit(); 
+               
+            }
+        } else {
+            // Redirect with error message for invalid credentials
+            header('Location: login.php?error=invalid_credentials');
+           
+            exit();
+           
+        }
     }
 
 }

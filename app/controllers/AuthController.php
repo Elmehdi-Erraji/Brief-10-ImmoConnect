@@ -7,4 +7,7 @@ class AuthController{
     public function signin(){
         include __DIR__ .'../../../views/auth/login.php';
     }
+    public function forgetPassword(){
+        include __DIR__ .'../../../views/auth/forgetPassword.php';
+    }
 }
