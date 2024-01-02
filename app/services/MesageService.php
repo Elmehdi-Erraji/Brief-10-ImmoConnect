@@ -5,14 +5,14 @@ include __DIR__ . '../../../vendor/autoload.php';
 use App\config\db_conn;
 use App\models\Message;
 use PDO, PDOException;
-class MessageModels {
+class MessageService {
     private $database;
     public function __construct()
     {
         $this->database= db_conn::getConnection();
     }
 
-    public function creatUser(Message $msg) {
+    public function creatMessage(Message $msg) {
         try{
         $query = "INSERT INTO `message_user`( `message`, `sendTime`, `sender_Id`, `reciever_Id`) VALUES (?,?,?,?)";
         $stmt = $this->database->prepare($query);
