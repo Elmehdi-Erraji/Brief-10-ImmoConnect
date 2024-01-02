@@ -7,4 +7,7 @@ class HomeController{
     public function user(){
         include __DIR__ .'../../../views/chat/users.php';
     }
+    public function chat(){
+        include __DIR__ .'../../../views/chat/chat.php';
+    }
 }

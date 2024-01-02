@@ -11,6 +11,7 @@ $router->setRoutes([
         'users'=>['HomeController' , 'user'],
         'login'=>['AuthController' , 'signin'],
         'register'=>['AuthController' , 'signup'],
+        'message'=>['HomeController' , 'chat'],
     ],
     'POST'=>[
         'register'=>['UserController' , 'register'],

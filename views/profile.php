@@ -198,7 +198,7 @@
                         </a>
 
                         <!-- item-->
-                        <a href="auth-logout-2.html" class="dropdown-item">
+                        <a href="login" class="dropdown-item">
                             <i class="ri-logout-box-line fs-18 align-middle me-1"></i>
                             <span>Logout</span>
                         </a>
@@ -243,7 +243,7 @@
     
           
                 <li class="side-nav-item">
-                <a href="/Brief-10-ImmoConnect/app/routes/../views/profile.php" class="side-nav-link">
+                <a href="home" class="side-nav-link">
                     <i class="ri-dashboard-3-line"></i>
                     <span> Acount</span>
                 </a>

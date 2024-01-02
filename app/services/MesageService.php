@@ -23,4 +23,16 @@ class MessageService {
     }
 
 }
+
+public function delete(Message $msg){
+    $stmt=$this->database->prepare(query:"DELETE FROM `message` WHERE id=:id");
+    $stmt->bindParam(':id',$msg->getId(),PDO::PARAM_INT);
+    try{
+        $stmt->execute();
+    }
+    catch(PDOException $e){
+        error_log("error deleting property:" . $e->getMessage());
+    }
+    
+}
 }
