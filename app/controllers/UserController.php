@@ -7,17 +7,12 @@ use App\Models\User;
 use App\services\UserServices;
 class UserController{
 
-    public function createUser($postData) {
-
-        var_dump($postData);
-        
-        // Retrieve form data
+    public function register($postData) {
+       
         $username = $postData['username'] ?? '';
         $email = $postData['email'] ?? '';
         $phone_number = $postData['phone_number'] ?? '';
         $password = $postData['password'] ?? '';
-        // $confirmPassword = $postData['confirmPassword'] ?? '';
-        
         
         // Set initial values for image, status, and role_id
         $image = null; 
@@ -27,12 +22,13 @@ class UserController{
         // Create a Users object
         $user = new User($username, $email, $phone_number, $password, $image, $status, $role_id);
     
-        // Create an instance of UserDAO
-        $userDAO = new UserServices();
+        // Create an instance of UserServices
+        $userServices = new UserServices();
     
-        // Call the createUser method in UserDAO to handle SQL logic
-        $result = $userDAO->createUser($user);
+        // Call the createUser method in UserServices to handle user creation logic
+        $result = $userServices->createUser($user);
     
+        // Return the result
         if ($result) {
             // User created successfully
             return true;
@@ -40,6 +36,9 @@ class UserController{
             // User creation failed
             return false;
         }
+    }
+    public function signup() {
+        echo 'test 1111';
     }
     public function showRegisterForm()
     {
