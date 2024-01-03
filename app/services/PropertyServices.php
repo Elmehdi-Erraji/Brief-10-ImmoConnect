@@ -18,7 +18,7 @@ class PropertyServices implements PropertyDAO{
 
 
 
-    public function create($property,$imgUrls){
+    public function create($property,$imgUrl){
        
         $stmt=$this->connection->prepare("INSERT INTO properties(adress,surface,room,shower,price,statut,type,description,user_id) Values(:adress,:surface,:room,:shower,:price,:statut,:type,:description,:user_id)");
         
@@ -43,16 +43,13 @@ class PropertyServices implements PropertyDAO{
         $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
        
         $stmt->execute();
-        $lastInsertId = $this->connection->lastInsertId();
-
-        foreach ($imgUrls as $imgUrl) {
-        $stmt = $this->connection->prepare("INSERT INTO images VALUES(null, :imgUrl, :property_id)");
-        $stmt->bindParam(':imgUrl', $imgUrl, PDO::PARAM_STR);
-        $stmt->bindParam(':property_id', $lastInsertId, PDO::PARAM_INT);
+        $lasInsertId =$this->connection->lastInsertId();
+        $stmt=$this->connection->prepare("INSERT INTO images Values(null,:imgUrl,:property_id)");
+        
+        $stmt->bindParam(':imgUrl',$imgUrl,PDO::PARAM_STR);
+        $stmt->bindParam(':property_id',$lasInsertId,PDO::PARAM_INT);
         $stmt->execute();
-    }
-
-    var_dump($imgUrls);
+       
         
       
     }
@@ -100,6 +97,15 @@ class PropertyServices implements PropertyDAO{
             error_log("error updating:" . $e->getMessage());
         }
         
+    }
+    public function getAllPropreties() {
+        $stmt = $this->connection->prepare("SELECT properties.*, images.imgUrl FROM properties JOIN images ON properties.id = images.properties_id");
+        $stmt->execute();
+    
+        // Fetch the results as an associative array
+        $properties = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+        return $properties;
     }
 
 }

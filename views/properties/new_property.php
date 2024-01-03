@@ -144,18 +144,9 @@
 													</div>
 												</div>
 
-												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Image</label>
-													<div class="col-lg-9">
-														<input class="form-control" name="image2" type="file" accept="image/png, image/gif, image/jpeg" >
-													</div>
-												</div>
+											
 
-												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Image</label>
-													<div class="col-lg-9">
-														<input class="form-control" name="image3" type="file" accept="image/png, image/gif, image/jpeg" >
-													</div>
+												
 												</div>
 												<!-- <div class="form-group row">
 													<label class="col-lg-3 col-form-label">Image 2</label>

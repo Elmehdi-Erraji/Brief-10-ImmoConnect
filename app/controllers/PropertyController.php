@@ -21,19 +21,10 @@ class PropertyController{
         $description=$postData['description'] ?? '';
         $user_id=$postData['user_id'] ?? '';
 
-        $images = ['image1', 'image2', 'image3']; // Assuming your form input names are image1, image2, image3
+        $image=$_FILES['image1']['name'];
+        $temp_name=$_FILES['image1']['tmp_name'];
 
-        $uploadedImages = [];
-    
-        foreach ($images as $imageName) {
-            $image = $_FILES[$imageName]['name'];
-            $temp_name = $_FILES[$imageName]['tmp_name'];
-    
-            $imagePath = "../../public/upload/$image";
-            move_uploaded_file($temp_name, $imagePath);
-    
-            $uploadedImages[] = $imagePath;
-        }
+        move_uploaded_file($temp_name,"../../public/upload/$image");
         
 
 
@@ -41,7 +32,7 @@ class PropertyController{
 
         $propertyService=new PropertyServices();
 
-        $result = $propertyService->create($property, $uploadedImages);
+        $result=$propertyService->create($property,$image);
 
         if($result){
             header('');
