@@ -1,6 +1,6 @@
 <?php
 // include __DIR__ . '/vendor/autoload.php';
-// use App\config; 
+// use app\config; 
 ?>
 <!DOCTYPE html>
 <html lang="en">

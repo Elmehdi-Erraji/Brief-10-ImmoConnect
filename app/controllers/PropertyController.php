@@ -5,7 +5,7 @@ namespace app\controllers;
 use app\models\Property;
 use app\services\PropertyServices;
 
-require './vendor/autoload.php';
+require '../../vendor/autoload.php';
 
 class PropertyController{
 
@@ -23,14 +23,14 @@ class PropertyController{
         
 
 
-        $property=new Property($adress,$surface,$room,$shower,$price,$statut,$type,$description,$user_id);
+        $property=new Property(null,$adress,$surface,$room,$shower,$price,$statut,$type,$description,$user_id);
 
         $propertyService=new PropertyServices();
 
         $result=$propertyService->create($property);
 
         if($result){
-            header('Location:/../index.html');
+            header('');
             exit();
         }     
     }

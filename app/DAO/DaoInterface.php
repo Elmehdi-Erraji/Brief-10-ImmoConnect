@@ -1,5 +1,5 @@
 <?php
-namespace App\DAO;
+namespace app\DAO;
 
 interface DaoInterface{
     public function save($entity);

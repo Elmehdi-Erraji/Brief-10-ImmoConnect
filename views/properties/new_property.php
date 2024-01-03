@@ -53,58 +53,70 @@
                         </div>
 					</div>
                     <div class="row p-5 bg-white">
-                        <form method="post" enctype="multipart/form-data">
+                        <form action="insert" method="POST" >
 								<div class="description">
 									<h5 class="text-secondary">Basic Information</h5><hr>
 								
 									
 										<div class="row">
 											<div class="col-xl-12">
-												<div class="form-group row">
-													<label class="col-lg-2 col-form-label">Title</label>
+											<div class="form-group row">
+													<label class="col-lg-3 col-form-label">Adress</label>
 													<div class="col-lg-9">
-														<input type="text" class="form-control" name="title" required placeholder="Enter Title">
+														<input type="text" class="form-control" name="adress" required placeholder="Enter Adress">
 													</div>
-												</div><!-- FOR MORE PROJECTS visit: codeastro.com -->
+											</div>		
+												</div>
 												<div class="form-group row">
-													<label class="col-lg-2 col-form-label">Content</label>
+													<label class="col-lg-3 col-form-label">Surface</label>
 													<div class="col-lg-9">
-														<textarea class="tinymce form-control" name="content" rows="10" cols="30"></textarea>
+														<input type="text" class="form-control" name="surface" required placeholder="Enter Surface">
 													</div>
 												</div>
-												
-											</div>
-											<div class="col-xl-6">
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Property Type</label>
+														<label class="col-lg-3 col-form-label">Room</label>
+														<div class="col-lg-9">
+															<input type="text" class="form-control" name="room" required placeholder="Enter Rooms (only no 1 to 10)">
+														</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-lg-3 col-form-label">Shower</label>
 													<div class="col-lg-9">
-														<select class="form-control" required name="ptype">
-															<option value="">Select Type</option>
-															<option value="apartment">Apartment</option>
-															<option value="flat">Flat</option>
-															<option value="building">Building</option>
-															<option value="house">House</option>
-															<option value="villa">Villa</option>
-															
-														</select>
+														<input type="text" class="form-control" name="shower" required placeholder="Enter Shower (only no 1 to 10)">
 													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-lg-3 col-form-label">Price</label>
+													<div class="col-lg-9">
+														<input type="text" class="form-control" name="price" required placeholder="Enter Price">
+													</div>
+												</div>
+										
+											
+											
 												</div>
 												<div class="form-group row">
 													<label class="col-lg-3 col-form-label">Selling Type</label>
 													<div class="col-lg-9">
-														<select class="form-control" required name="stype">
+														<select class="form-control" required name="type">
 															<option value="">Select Status</option>
 															<option value="rent">Rent</option>
 															<option value="sale">Sale</option>
 														</select>
 													</div>
-												
+											
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Bathroom</label>
+													<label class="col-lg-2 col-form-label">Description</label>
 													<div class="col-lg-9">
-														<input type="text" class="form-control" name="bath" required placeholder="Enter Bathroom (only no 1 to 10)">
+														<textarea class="tinymce form-control" name="description" rows="10" cols="30"></textarea>
 													</div>
 												</div>
+												
+											</div>
+											<div class="col-xl-6">
+											
+												
+												
 											
 										
 										</div>
@@ -112,12 +124,7 @@
 										<div class="row">
 											<div class="col-xl-6">
 												
-												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Price</label>
-													<div class="col-lg-9">
-														<input type="text" class="form-control" name="price" required placeholder="Enter Price">
-													</div>
-												</div>
+											
 											
 											
 											</div>
@@ -126,7 +133,7 @@
 										
 										
 												
-										<h5 class="text-secondary">Image & Status</h5><hr>
+										<!-- <h5 class="text-secondary">Image & Status</h5><hr>
 										<div class="row">
 											<div class="col-xl-6">
 												
@@ -210,10 +217,10 @@
 													</div>
 												</div>
 											</div>
-										</div>
-
+										</div> -->
+										<button class="btn btn-info " type="submit" name="submit" >Submit</button>
 										
-											<input type="submit" value="Submit Property" class="btn btn-info"name="add" style="margin-left:200px;">
+											
 										
 								</div>
 								</form>

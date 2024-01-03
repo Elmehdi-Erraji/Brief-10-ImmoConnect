@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/../../vendor/autoload.php';
-use App\routes\Router;
+use app\routes\Router;
 
 $router = new Router();
 
@@ -11,9 +11,11 @@ $router->setRoutes([
         'users'=>['HomeController' , 'user'],
         'login'=>['AuthController' , 'signin'],
         'register'=>['AuthController' , 'signup'],
+        'new_property'=>['HomeController' , 'new_property'],
     ],
     'POST'=>[
         'register'=>['UserController' , 'register'],
+        'insert'=>['PropertyController' , 'insert']
     ]
 ]);
 if (isset($_GET['url'])) {
@@ -24,7 +26,7 @@ if (isset($_GET['url'])) {
         $route = $router->getRoute($method, $uri);
         if ($route) {
             list($controllerName, $methodName) = $route;
-            $controllerClass = 'App\\controllers\\' . ucfirst($controllerName);
+            $controllerClass = 'app\\controllers\\' . ucfirst($controllerName);
             $object = new $controllerClass();
 
             if ($methodName) {

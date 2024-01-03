@@ -1,6 +1,5 @@
 <?php
-
-namespace App\routes;
+namespace app\routes;
 
 class Router {
     private $routes = [];
