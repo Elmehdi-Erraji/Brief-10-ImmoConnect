@@ -13,12 +13,17 @@ $router->setRoutes([
         'register'=>['AuthController' , 'signup'],
         'forgetPassword'=>['AuthController' , 'forgetPassword'],
         'dashboard'=>['AuthController' , 'dashboard'],
+        'fetchUsers'=>['UserController' , 'fetchUsers'],
+        'user-add'=>['HomeController' , 'userAdd'],
+        'user-list'=>['HomeController' , 'userList'],
 
     ],
     'POST'=>[
         'register'=>['UserController' , 'register'],
         'login'=>['UserController' , 'login'],
+        'AddUser'=>['UserController' , 'AddUser'],
     ]
+    
 ]);
 if (isset($_GET['url'])) {
     $uri = trim($_GET['url'], '/');

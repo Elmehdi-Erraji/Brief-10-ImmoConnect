@@ -75,5 +75,39 @@ class UserServices implements UserDAO{
             return null;
         }
     }
+
+
+
+    public static function getAllUsers() {
+        $connection = db_conn::getConnection();
+        $users = [];
+    
+        $query = "SELECT * FROM users";
+    
+        $statement = $connection->query($query);
+    
+        if ($statement) {
+            while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+                $user = new User(
+                    $row['username'],
+                    $row['email'],
+                    $row['phone_number'],
+                    $row['password'],
+                    $row['image'],
+                    $row['statut'],
+                    $row['role_id']
+                );
+    
+                // Optionally, you can set the 'id' using setId method if needed
+                $user->setId($row['id']);
+    
+                $users[] = $user;
+            }
+        }
+    
+        return $users;
+    }
+    
+    
     
 }

@@ -95,35 +95,62 @@ class UserController{
     }
 
 
-
-
-
-
-
-
-    public function fetchUsers() {
-        try {
-            $dbConnection = db_conn::getConnection();
-            
-            // Prepare SQL query
-            $query = "SELECT * FROM users";
-    
-            // Execute the query using PDO
-            $statement = $dbConnection->query($query);
-    
-            // Fetch data as associative array
-            $data = $statement->fetchAll(PDO::FETCH_ASSOC);
-    
-            // Set response header to JSON
-            header('Content-Type: application/json');
-    
-            // Output data as JSON
-            echo json_encode($data);
-        } catch (PDOException $e) {
-            // Handle any database connection errors
-            die("Query failed: " . $e->getMessage());
-        }
+    public function getUsers() {
+        $users = UserServices::getAllUsers();
+        return $users;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // public function fetchUsers() {
+    //     try {
+    //         $dbConnection = db_conn::getConnection();
+            
+    //         // Prepare SQL query
+    //         $query = "SELECT * FROM users";
+    
+    //         // Execute the query using PDO
+    //         $statement = $dbConnection->query($query);
+    
+    //         // Fetch data as associative array
+    //         $data = $statement->fetchAll(PDO::FETCH_ASSOC);
+    
+    //         // Close the database connection properly
+    //         $dbConnection = null;
+    
+    //         // Set response header to JSON
+    //         header('Content-Type: application/json');
+    
+    //         // Output data as JSON
+    //         echo json_encode($data);
+    //         exit; // Ensure no further output after sending JSON response
+    //     } catch (PDOException $e) {
+    //         // Handle any database connection errors
+    //         http_response_code(500); // Internal Server Error
+    //         echo json_encode(array($data);
+    //         exit; // Ensure no further output after sending JSON error response
+    //     }
+    // }
+ 
+    
 
 }
 

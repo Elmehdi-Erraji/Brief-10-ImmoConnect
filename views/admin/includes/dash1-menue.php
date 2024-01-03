@@ -46,32 +46,16 @@
             <div class="collapse" id="sidebarUsers">
                 <ul class="side-nav-second-level">
                     <li>
-                        <a href="user-add.php">Add User</a>
+                        <a href="user-add">Add User</a>
                     </li>
                     <li>
-                        <a href="user-list.php">User List</a>
+                        <a href="user-list">User List</a>
                     </li>
                 </ul>
             </div>
         </li>
 
-        <li class="side-nav-item">
-            <a data-bs-toggle="collapse" href="#sidebarProjects" aria-expanded="false" aria-controls="sidebarProjects" class="side-nav-link">
-                <i class="ri-pages-line"></i>
-                <span> Books </span>
-                <span class="menu-arrow"></span>
-            </a>
-            <div class="collapse" id="sidebarProjects">
-                <ul class="side-nav-second-level">
-                    <li>
-                        <a href="book-add.php">Add a Book</a>
-                    </li>
-                    <li>
-                        <a href="book-list.php">Books List</a>
-                    </li>
-                </ul>
-            </div>
-        </li>
+       
        
       
         <li class="side-nav-item">

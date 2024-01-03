@@ -16,7 +16,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 
 <head>
     <meta charset="utf-8" />
-    <title>Profile </title>
+    <title>Dashboard </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="fully responsive." name="description" />
     <meta content="Mehdi" name="author" />
@@ -160,8 +160,8 @@ require_once __DIR__ . '/../../vendor/autoload.php';
                                                         <th>Username</th>
                                                         <th>E-mail</th>
                                                         <th>Phone</th>
-                                                        <th>Role</th>
                                                         <th>Status</th>
+                                                        <th>Role</th>
                                                         <th>Actions</th>
                                                     </tr>
                                                 </thead>
@@ -221,18 +221,18 @@ require_once __DIR__ . '/../../vendor/autoload.php';
                                             }
                                         };
 
-                                        xhr.open('GET', 'fetchUsers', true);
+                                        xhr.open('GET', 'fetchUsers.php', true);
                                         xhr.send();
                                     }
 
-                                    const roleNames = {
-                                        1: 'Admin',
-                                        2: 'Seller',
-                                        3: 'Client'
-                                    };
+                                    // const roleNames = {
+                                    //     1: 'Admin',
+                                    //     2: 'Seller',
+                                    //     3: 'Client'
+                                    // };
 
                                         function populateTable(data) {
-                                           
+                                           console.log(data);
                                         var tableBody = document.getElementById('tableBody');
                                         tableBody.innerHTML = '';
 
@@ -244,9 +244,9 @@ require_once __DIR__ . '/../../vendor/autoload.php';
                                             <td>${row.id}</td>
                                             <td>${row.username}</td>
                                             <td>${row.email}</td>
-                                            <td>${row.phone}</td>
-                                            <td>${row.role_id}</td>
+                                            <td>${row.phone_number}</td>
                                             <td>${row.statut}</td>
+                                            <td>${row.role_id}</td>
                                             <td >
                                                 <a href="../../app/controllers/UserController.php?action=delete&user_id=${row.id}" class="btn btn-danger">Delete</a>
                                                 <a href="user-update.php?user_id=${row.id}" class="btn btn-info">Update</a>

@@ -7,4 +7,15 @@ class HomeController{
     public function user(){
         include __DIR__ .'../../../views/chat/users.php';
     }
+
+
+    public function userAdd(){
+        include __DIR__ .'../../../views/admin/user-add.php';
+    }
+
+    public function userList(){
+        include __DIR__ .'../../../views/admin/user-list.php';
+    }
+
+
 }

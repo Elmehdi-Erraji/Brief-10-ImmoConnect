@@ -20,7 +20,7 @@
                             <img src="/Brief-10-ImmoConnect/app/routes/../../public/assets/images/logo-sm.png" alt="dark logo">
                         </span>
                         <span class="logo-sm">
-                            <img src="..//Brief-10-ImmoConnect/app/routes/../../public/assets/images/logo-sm.png" >
+                            <img src="/Brief-10-ImmoConnect/app/routes/../../public/assets/images/logo-sm.png" >
                         </span>
                     </a>
                 </div>
@@ -157,7 +157,7 @@
                         </div>
 
                         <!-- item-->
-                        <a href="pages-profile.html" class="dropdown-item">
+                        <a href="profil" class="dropdown-item">
                             <i class="ri-account-circle-line fs-18 align-middle me-1"></i>
                             <span>My Account</span>
                         </a>
