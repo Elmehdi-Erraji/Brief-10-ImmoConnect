@@ -1,12 +1,11 @@
 <?php
 require_once __DIR__ . '/../../vendor/autoload.php';
 
-// include '../../app/controllers/UserController.php';
 
-// use App\Controllers\UserController;
+use App\Controllers\UserController;
 
-// $data = new UserController();
-// list($userCount, $bookCount, $reservationcount) = $data->showData();
+$data = new UserController();
+list($userCount) = $data->showData();
 
 
 
@@ -96,7 +95,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
                                         <i class="ri-group-2-line widget-icon"></i>
                                     </div>
                                     <h6 class="text-uppercase mt-0" title="Customers">Users</h6>
-                                    <h2 class="my-2">5</h2>
+                                    <h2 class="my-2"><?php echo $userCount; ?></h2>
 
                                 </div>
                             </div>
@@ -108,8 +107,8 @@ require_once __DIR__ . '/../../vendor/autoload.php';
                                     <div class="float-end">
                                         <i class="ri-shopping-basket-line widget-icon"></i>
                                     </div>
-                                    <h6 class="text-uppercase mt-0" title="Customers">Books</h6>
-                                    <h2 class="my-2">6</h2>
+                                    <h6 class="text-uppercase mt-0" title="Customers">Properties</h6>
+                                    <h2 class="my-2">5</h2>
 
                                 </div>
                             </div>
@@ -225,12 +224,6 @@ require_once __DIR__ . '/../../vendor/autoload.php';
                                         xhr.send();
                                     }
 
-                                    // const roleNames = {
-                                    //     1: 'Admin',
-                                    //     2: 'Seller',
-                                    //     3: 'Client'
-                                    // };
-
                                         function populateTable(data) {
                                            console.log(data);
                                         var tableBody = document.getElementById('tableBody');
@@ -248,7 +241,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
                                             <td>${row.statut}</td>
                                             <td>${row.role_id}</td>
                                             <td >
-                                                <a href="../../app/controllers/UserController.php?action=delete&user_id=${row.id}" class="btn btn-danger">Delete</a>
+                                                <a href="Delete?user_id=${row.id}" class="btn btn-danger">Delete</a>
                                                 <a href="user-update.php?user_id=${row.id}" class="btn btn-info">Update</a>
                                                                                                                 
                                             </td>

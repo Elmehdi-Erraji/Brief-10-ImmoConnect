@@ -171,23 +171,14 @@ class UserController{
 
     }
 
-    // public function AddUser($postData) {
-    //     $fullname = $postData['first-name'] ?? '';
-    //     $lastname = $postData['last-name'] ?? '';
-    //     $email = $postData['email'] ?? '';
-    //     $phone = $postData['phone'] ?? '';
-    //     $password = $postData['password'] ?? '';
-    //     $role = $postData['user_role'] ?? ''; // Assuming 'user_role' corresponds to the role ID
+    public function showData() {
+        $model = new UserServices();
+        $userCount = $model->countUsers();
+        
 
-    //     $user = new User($fullname, $lastname, $email, $phone, $password);
-    //     $user->setRole($role); // Set user role
-    //     $userDAO = new UserDAO();
-
-    //     $result = $userDAO->addUser($user);
-
-    //     return $result;
-    // }
-
+        // Include the view file and pass the variables
+        return [$userCount];
+        }
 
 
 
