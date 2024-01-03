@@ -108,7 +108,7 @@ public function login() {
     // Get user details by email
     $user = $userServices->getUserByEmail($email);
 
-    if ($user['password'] == $password) {
+    if ($user && password_verify($password, $user['password'])) {
         if ($user['statut'] == 0) { // Check if user status is active
             // Start a session if not started
             if (session_status() === PHP_SESSION_NONE) {

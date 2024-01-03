@@ -29,6 +29,8 @@ class UserServices implements UserDAO{
         $status = $user->getStatut();
         $role_id = $user->getRoleId();
 
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
         $query = "INSERT INTO users (username, email, phone_number, password, image, statut, role_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = $this->db->prepare($query);
 
@@ -37,7 +39,7 @@ class UserServices implements UserDAO{
             return false;
         }
 
-        $success = $stmt->execute([$username, $email, $phone_number, $password, $image, $status, $role_id]);
+        $success = $stmt->execute([$username, $email, $phone_number, $hashedPassword, $image, $status, $role_id]);
 
         if ($success) {
             return true; // User created successfully
