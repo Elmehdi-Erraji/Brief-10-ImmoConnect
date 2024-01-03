@@ -20,6 +20,10 @@ class HomeController{
        
         include __DIR__ .'../../../views/admin/user-update.php';
     }
+    public function profile(){
+       
+        include __DIR__ .'../../../views/profile.php';
+    }
 
 
 }

@@ -8,7 +8,6 @@ $data = new UserController();
 list($userCount) = $data->showData();
 
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

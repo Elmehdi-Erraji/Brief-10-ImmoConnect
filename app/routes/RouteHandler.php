@@ -18,6 +18,8 @@ $router->setRoutes([
         'user-list'=>['HomeController' , 'userList'],
         'Delete'=>['UserController' , 'userDelete'],
         'Update'=>['HomeController' , 'Update'],
+        'logout'=>['UserController' , 'logout'],
+        'profile'=>['HomeController' , 'profile'],
         
 
     ],

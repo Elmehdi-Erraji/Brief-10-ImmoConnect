@@ -95,54 +95,66 @@ class UserController{
 
 
 
-    public function login() {
-        $postData = $_POST ?? [];
-        $email = $postData['email'] ?? '';
-        $password = $postData['password'] ?? '';
+public function login() {
+    $postData = $_POST ?? [];
+    $email = $postData['email'] ?? '';
+    $password = $postData['password'] ?? '';
 
+    // Validate and sanitize input data as needed
 
-        // Instantiate UserDAO
-        $userServices = new UserServices();
+    // Instantiate UserDAO
+    $userServices = new UserServices();
 
-        // Get user details by email
-        $user = $userServices->getUserByEmail($email);
+    // Get user details by email
+    $user = $userServices->getUserByEmail($email);
 
-        if ($user['password'] == $password) {
-            // Start a session
+    if ($user['password'] == $password) { 
+        // Start a session if not started
+        if (session_status() === PHP_SESSION_NONE) {
             session_start();
-
-            // Set session variables
-            $_SESSION['user_id'] = $user['id'];
-            
-            $_SESSION['username'] = $user['username'];
-            $_SESSION['email'] = $user['email'];
-
-            // Get user's role
-            $role = $user['role_id'];
-
-            $_SESSION['role_id'] = $role;
-           
-            // Redirect based on user's role
-            if ($role === 1) {
-                header('Location: dashboard');
-                exit();
-            } elseif ($role === 2) {
-                header('Location: listings.php');
-                exit();
-            } else {
-                header('Location: error');
-                exit(); 
-               
-            }
-        } else {
-            // Redirect with error message for invalid credentials
-            header('Location: login.php?error=invalid_credentials');
-           
-            exit();
-           
         }
-    }
 
+        // Set session variables
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['username'] = $user['username'];
+        $_SESSION['email'] = $user['email'];
+        $_SESSION['role_id'] = $user['role_id'];
+        $_SESSION['image'] = $user['image'];
+
+        // Redirect based on user's role
+        $role = $user['role_id'];
+        if ($role === 1) {
+            header('Location: dashboard');
+            exit();
+        } elseif ($role === 2) {
+            header('Location: listings.php');
+            exit();
+        } else {
+            header('Location: error');
+            exit();
+        }
+    } else {
+        // Redirect with error message for invalid credentials
+        header('Location: login?error=invalid_credentials');
+        exit();
+    }
+}
+
+    public function logout() {
+       
+            session_start();
+    
+            // Unset all of the session variables
+            $_SESSION = [];
+    
+            // Destroy the session
+            session_destroy();
+    
+            // Redirect to the login page after logout
+            header('Location: login'); // Redirect to your login page
+            exit();
+        
+    }
 
     public function getUsers() {
         $users = UserServices::getAllUsers();

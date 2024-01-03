@@ -8,6 +8,7 @@ use App\Controllers\UserController;
 
 $userController = new UserController();
 $users = $userController->getUsers();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
