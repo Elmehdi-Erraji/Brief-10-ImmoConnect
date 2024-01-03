@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,95 +23,100 @@
     <!-- Icons css -->
     <link href="/Brief-10-ImmoConnect/app/routes/../../public/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
 
-  
+
     <!-- Icons css -->
     <link href="/Brief-10-ImmoConnect/app/routes/../../public/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <style>
+     .error {
+        color: red;
+        font-size: 14px; /* Adjust the font size as needed */
+    }
+</style>
 </head>
 
-    <body>
-        <!-- Begin page -->
-        <div class="wrapper">
+<body>
+    <!-- Begin page -->
+    <div class="wrapper">
 
-             <!-- ========== Topbar Start ========== -->
+        <!-- ========== Topbar Start ========== -->
 
-                <?php include 'includes/dash1-header.php' ?>
+        <?php include 'includes/dash1-header.php' ?>
 
-            <!-- ========== Topbar Start ========== -->
-
-
-            <!-- ========== Left Sidebar Start ========== -->
-
-                <?php include 'includes/dash1-menue.php' ?>
-
-            <!-- ========== Left Sidebar End ========== -->
+        <!-- ========== Topbar Start ========== -->
 
 
+        <!-- ========== Left Sidebar Start ========== -->
 
-            <!-- ============================================================== -->
-            <!-- Start Page Content here -->
-            <!-- ============================================================== -->
+        <?php include 'includes/dash1-menue.php' ?>
 
-            <div class="content-page">
-                <div class="content">
+        <!-- ========== Left Sidebar End ========== -->
 
-                    <!-- Start Content-->
-                    <div class="container-fluid">
 
-                        <!-- start page title -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="page-title-box">
-                                    <div class="page-title-right">
-                                        <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);"> </a></li>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboards</a></li>
-                                            <li class="breadcrumb-item active">Welcome!</li>
-                                        </ol>
-                                    </div>
-                                    <h4 class="page-title">Welcome!</h4>
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="content">
+
+                <!-- Start Content-->
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box">
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);"> </a></li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboards</a></li>
+                                        <li class="breadcrumb-item active">Welcome!</li>
+                                    </ol>
                                 </div>
+                                <h4 class="page-title">Welcome!</h4>
                             </div>
                         </div>
-                        <!-- end page title -->
+                    </div>
+                    <!-- end page title -->
 
-                     
-                    
-                        <!-- end row -->
 
-                        <div class="row">
-                       
+
+                    <!-- end row -->
+
+                    <div class="row">
+
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
                                     <h4 class="header-title">Add a new user</h4>
-                                    
+
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-lg-6">
-                                        <form action="addUser" method="POST" id="addUserForm" enctype="multipart/form-data">
+                                            <form action="addUser" method="POST" id="addUserForm" enctype="multipart/form-data">
                                                 <!-- User Name -->
                                                 <div class="mb-3">
-                                                    <label for="name" class="form-label">Usernmae</label>
-                                                    <input type="text" id="name" class="form-control" name="username" placeholder="First Name">
-                                                    <span id="nameError" class="error">
-                                                    </span>
+                                                    <label for="name" class="form-label">Username</label>
+                                                    <input type="text" id="name" class="form-control" name="username" placeholder="Username">
+                                                    <span id="nameError" class="error"></span>
                                                 </div>
-                                               
-                                               
+
                                                 <!-- Email -->
                                                 <div class="mb-3">
                                                     <label for="email" class="form-label">Email</label>
                                                     <input type="email" id="email" name="email" class="form-control" placeholder="Email">
-                                                    <span id="emailError" class="error">
-                                                    </span>
+                                                    <span id="emailError" class="error"></span>
                                                 </div>
+
+                                                <!-- Phone -->
                                                 <div class="mb-3">
-                                                    <label for="phone" class="form-label">phone</label>
-                                                    <input type="phone" id="phone" class="form-control" name="phone" placeholder="Phone Number">
-                                                    <span id="nameError" class="error">
-                                                    </span>
+                                                    <label for="phone" class="form-label">Phone</label>
+                                                    <input type="text" id="phone" class="form-control" name="phone" placeholder="Phone Number">
+                                                    <span id="phoneError" class="error"></span>
                                                 </div>
+
                                                 <!-- User Role -->
                                                 <div class="mb-3">
                                                     <label for="user_role" class="form-label">User Role</label>
@@ -122,20 +126,20 @@
                                                         <option value="3">Client</option>
                                                         <!-- Add more options if needed -->
                                                     </select>
-                                                    <span class="error" id="userRoleError">
-                                                    </span>
+                                                    <span class="error" id="userRoleError"></span>
                                                 </div>
+
                                                 <!-- User Status -->
                                                 <div class="mb-3">
-                                                    <label for="statut" class="form-label">User Status</label>
-                                                    <select class="form-select" id="statut" name="status">
+                                                    <label for="status" class="form-label">User Status</label>
+                                                    <select class="form-select" id="status" name="status">
                                                         <option value="0">Active</option>
-                                                        <option value="1">Desactivated</option>
+                                                        <option value="1">Deactivated</option>
                                                         <!-- Add more options if needed -->
                                                     </select>
-                                                    <span class="error" id="userRoleError">
-                                                    </span>
+                                                    <span class="error" id="statusError"></span>
                                                 </div>
+
                                                 <!-- Password -->
                                                 <div class="mb-3">
                                                     <label for="password" class="form-label">Password</label>
@@ -145,78 +149,140 @@
                                                             <span class="password-eye"></span>
                                                         </div>
                                                     </div>
-                                                    <span id="passwordError" class="error">
-                                                    </span>
+                                                    <span id="passwordError" class="error"></span>
                                                 </div>
+
                                                 <!-- Confirm Password -->
                                                 <div class="mb-3">
-                                                    <label for="confirmPassword" class="form-label">Confirm password</label>
+                                                    <label for="confirmPassword" class="form-label">Confirm Password</label>
                                                     <div class="input-group input-group-merge">
-                                                        <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="Enter your password">
+                                                        <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="Re-enter your password">
                                                         <div class="input-group-text" data-password="false">
                                                             <span class="password-eye"></span>
                                                         </div>
                                                     </div>
-                                                    <span id="confirmPasswordError" class="error">
-                                                    </span>
+                                                    <span id="confirmPasswordError" class="error"></span>
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label for="file" class="form-label">Upload Image</label>
                                                     <input type="file" id="file" name="user_image" class="form-control" accept="image/jpeg, image/png,image/jpg">
+                                                    <span id="fileError" class="error"></span>
                                                 </div>
 
                                                 <button type="submit" id="submitButton" class="btn btn-primary" name="addUser">Submit</button>
                                             </form>
-                    
-                                            </div> 
+                                            <script>
+                                                document.getElementById('addUserForm').addEventListener('submit', function(event) {
+                                                    let isValid = true;
+
+                                                    // Validation for Username
+                                                    let username = document.getElementById('name').value.trim();
+                                                    if (username === '') {
+                                                        document.getElementById('nameError').textContent = 'Username is required';
+                                                        isValid = false;
+                                                    } else {
+                                                        document.getElementById('nameError').textContent = '';
+                                                    }
+
+                                                    // Validation for Email
+                                                    let email = document.getElementById('email').value.trim();
+                                                    if (email === '') {
+                                                        document.getElementById('emailError').textContent = 'Email is required';
+                                                        isValid = false;
+                                                    } else {
+                                                        document.getElementById('emailError').textContent = '';
+                                                    }
+
+                                                    // Validation for Phone Number
+                                                    let phone = document.getElementById('phone').value.trim();
+                                                    if (phone === '') {
+                                                        document.getElementById('phoneError').textContent = 'Phone number is required';
+                                                        isValid = false;
+                                                    } else if (!/^\d{10}$/.test(phone)) {
+                                                        document.getElementById('phoneError').textContent = 'Please enter a valid 10-digit phone number';
+                                                        isValid = false;
+                                                    } else {
+                                                        document.getElementById('phoneError').textContent = '';
+                                                    }
+
+                                                    // Validation for Password
+                                                    let password = document.getElementById('password').value.trim();
+                                                    if (password === '') {
+                                                        document.getElementById('passwordError').textContent = 'Password is required';
+                                                        isValid = false;
+                                                    } else {
+                                                        document.getElementById('passwordError').textContent = '';
+                                                    }
+
+                                                    // Validation for Confirm Password
+                                                    let confirmPassword = document.getElementById('confirmPassword').value.trim();
+                                                    if (confirmPassword === '') {
+                                                        document.getElementById('confirmPasswordError').textContent = 'Confirm password is required';
+                                                        isValid = false;
+                                                    } else if (confirmPassword !== password) {
+                                                        document.getElementById('confirmPasswordError').textContent = 'Passwords do not match';
+                                                        isValid = false;
+                                                    } else {
+                                                        document.getElementById('confirmPasswordError').textContent = '';
+                                                    }
+
+                                                    if (!isValid) {
+                                                        event.preventDefault(); // Prevent form submission if validation fails
+                                                    }
+                                                });
+                                            </script>
                                         </div>
-                                    
-                                    </div> 
-                                </div> 
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
-                            <!-- end col-->
-                        </div>
-                        <!-- end row -->
-
                     </div>
-                    <!-- container -->
-
+                    <!-- end col-->
                 </div>
-            
-
-
-
-
-                <!-- Footer Start -->
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-12 text-center">
-                                <script>document.write(new Date().getFullYear())</script> ©   Created by<b> Mehdi</b>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-                <!-- end Footer -->
+                <!-- end row -->
 
             </div>
-
-            <!-- ============================================================== -->
-            <!-- End Page content -->
-            <!-- ============================================================== -->
+            <!-- container -->
 
         </div>
-        <!-- END wrapper -->
 
-        <!-- Theme Settings -->
-               
-        
-          <!-- Vendor js -->
-                 <script src="/Brief-10-ImmoConnect/app/routes/../../public/assets/js/vendor.min.js"></script>
-                <!-- App js -->
-                <script src="/Brief-10-ImmoConnect/app/routes/../../public/assets/js/app.min.js"></script>
 
-    </body>
-</html> 
+
+
+
+        <!-- Footer Start -->
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script> © Created by<b> Mehdi</b>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end Footer -->
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+    </div>
+    <!-- END wrapper -->
+
+    <!-- Theme Settings -->
+
+
+    <!-- Vendor js -->
+    <script src="/Brief-10-ImmoConnect/app/routes/../../public/assets/js/vendor.min.js"></script>
+    <!-- App js -->
+    <script src="/Brief-10-ImmoConnect/app/routes/../../public/assets/js/app.min.js"></script>
+
+</body>
+
+</html>

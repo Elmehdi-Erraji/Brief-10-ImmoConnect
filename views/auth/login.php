@@ -50,6 +50,13 @@
 
                                         <!-- form -->
                                         <form id="loginForm" action="login" method="post">
+                                        <?php
+                                            session_start();
+                                            if (isset($_SESSION['login_error'])) {
+                                                echo '<div class="alert alert-danger" role="alert">' . $_SESSION['login_error'] . '</div>';
+                                                unset($_SESSION['login_error']); 
+                                            }
+                                            ?>
                                             <div class="mb-3">
                                                 <label for="emailaddress" class="form-label">Email address</label>
                                                 <input class="form-control" type="email" name="email" id="emailaddress" placeholder="Enter your email">

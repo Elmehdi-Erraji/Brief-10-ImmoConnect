@@ -14,8 +14,8 @@ if (isset($_GET['user_id']) && is_numeric($_GET['user_id'])) {
     $userService = new UserServices();
 
     // Fetch user details by ID using UserServices instance method
-    $user = $userService->getUserById($userId);
-    if (!$user) {
+    $userinfo = $userService->getUserById($userId);
+    if (!$userinfo) {
         echo "User not found!";
         exit();
     }
@@ -121,13 +121,14 @@ if (isset($_GET['user_id']) && is_numeric($_GET['user_id'])) {
                                         <div class="col-lg-6">
 
                                             <form action="updateUser" method="POST" id="updateUserForm" enctype="multipart/form-data">
-                                                <input type="hidden" name="user_id" value="<?php echo $user->getId(); ?>">
+                                                <input type="hidden" name="user_id" value="<?php echo $userinfo->getId(); ?>">
 
                                                 <!-- User Name -->
                                                 <div class="mb-3">
                                                     <label for="name" class="form-label">Usernmae</label>
-                                                    <input type="text" id="name" class="form-control" name="username" placeholder="First Name" value="<?php echo $user->getUsername(); ?>">
+                                                    <input type="text" id="name" class="form-control" name="username" placeholder="First Name" value="<?php echo $userinfo->getUsername(); ?>">
                                                     <span id="nameError" class="error">
+                                                        <?php echo isset($errors['username']) ? $errors['username'] : ''; ?>
                                                     </span>
                                                 </div>
 
@@ -135,40 +136,44 @@ if (isset($_GET['user_id']) && is_numeric($_GET['user_id'])) {
                                                 <!-- Email -->
                                                 <div class="mb-3">
                                                     <label for="email" class="form-label">Email</label>
-                                                    <input type="email" id="email" name="email" class="form-control" placeholder="Email" value="<?php echo $user->getEmail(); ?>">
+                                                    <input type="email" id="email" name="email" class="form-control" placeholder="Email" value="<?php echo $userinfo->getEmail(); ?>">
                                                     <span id="emailError" class="error">
+                                                        <?php echo isset($errors['email']) ? $errors['email'] : ''; ?>
                                                     </span>
                                                 </div>
                                                 <!-- Phone -->
                                                 <div class="mb-3">
                                                     <label for="phone" class="form-label">phone</label>
-                                                    <input type="phone" id="phone" class="form-control" name="phone" placeholder="Phone Number" value="<?php echo $user->getPhoneNumber(); ?>">
-                                                    <span id="nameError" class="error">
+                                                    <input type="phone" id="phone" class="form-control" name="phone" placeholder="Phone Number" value="<?php echo $userinfo->getPhoneNumber(); ?>">
+                                                    <span id="phoneError" class="error">
+                                                        <?php echo isset($errors['phone']) ? $errors['phone'] : ''; ?>
+                                                    </span>
                                                     </span>
                                                 </div>
                                                 <!-- User Role -->
                                                 <div class="mb-3">
                                                     <label for="user_role" class="form-label">User Role</label>
                                                     <select class="form-select" id="user_role" name="user_role">
-                                                        <option value="1" <?php echo ($user->getRoleId() == 1) ? 'selected' : ''; ?>>Admin</option>
-                                                        <option value="2" <?php echo ($user->getRoleId() == 2) ? 'selected' : ''; ?>>Seller</option>
-                                                        <option value="3" <?php echo ($user->getRoleId() == 3) ? 'selected' : ''; ?>>Client</option>
+                                                        <option value="1" <?php echo ($userinfo->getRoleId() == 1) ? 'selected' : ''; ?>>Admin</option>
+                                                        <option value="2" <?php echo ($userinfo->getRoleId() == 2) ? 'selected' : ''; ?>>Seller</option>
+                                                        <option value="3" <?php echo ($userinfo->getRoleId() == 3) ? 'selected' : ''; ?>>Client</option>
                                                         <!-- Add more options if needed -->
                                                     </select>
-                                                    </div>
+                                                </div>
                                                 <!-- User Status -->
                                                 <div class="mb-3">
                                                     <label for="statut" class="form-label">User Status</label>
                                                     <select class="form-select" id="statut" name="status">
-                                                    <option value="0" <?php echo ($user->getStatut() == 0) ? 'selected' : ''; ?>>Active</option>
-                                                    <option value="1" <?php echo ($user->getStatut() == 1) ? 'selected' : ''; ?>>Desactive</option>
+                                                        <option value="0" <?php echo ($userinfo->getStatut() == 0) ? 'selected' : ''; ?>>Active</option>
+                                                        <option value="1" <?php echo ($userinfo->getStatut() == 1) ? 'selected' : ''; ?>>Desactive</option>
                                                         <!-- Add more options if needed -->
                                                     </select>
-                                                    
+
                                                 </div>
                                                 <button type="submit" id="submitButton" class="btn btn-primary" name="updateUser">Submit</button>
                                                 <a href="dashboard"><button type="button" class="btn btn-dark">Back</button></a>
                                             </form>
+
 
                                         </div>
                                     </div>

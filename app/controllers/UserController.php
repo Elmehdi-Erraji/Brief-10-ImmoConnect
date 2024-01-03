@@ -108,38 +108,48 @@ public function login() {
     // Get user details by email
     $user = $userServices->getUserByEmail($email);
 
-    if ($user['password'] == $password) { 
-        // Start a session if not started
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
+    if ($user['password'] == $password) {
+        if ($user['statut'] == 0) { // Check if user status is active
+            // Start a session if not started
+            if (session_status() === PHP_SESSION_NONE) {
+                session_start();
+            }
 
-        // Set session variables
-        $_SESSION['user_id'] = $user['id'];
-        $_SESSION['username'] = $user['username'];
-        $_SESSION['email'] = $user['email'];
-        $_SESSION['role_id'] = $user['role_id'];
-        $_SESSION['image'] = $user['image'];
+            // Set session variables
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['username'] = $user['username'];
+            $_SESSION['email'] = $user['email'];
+            $_SESSION['role_id'] = $user['role_id'];
+            $_SESSION['image'] = $user['image'];
 
-        // Redirect based on user's role
-        $role = $user['role_id'];
-        if ($role === 1) {
-            header('Location: dashboard');
-            exit();
-        } elseif ($role === 2) {
-            header('Location: listings.php');
-            exit();
+            // Redirect based on user's role
+            $role = $user['role_id'];
+            if ($role === 1) {
+                header('Location: dashboard');
+                exit();
+            } elseif ($role === 2) {
+                header('Location: listings');
+                exit();
+            } else {
+                header('Location: profile');
+                exit();
+            }
         } else {
-            header('Location: error');
+            // User status is not active (banned)
+            // Set error message in session and redirect to login page
+            session_start();
+            $_SESSION['login_error'] = 'Your account has been banned. Please contact the admin.';
+            header('Location: login');
             exit();
         }
     } else {
         // Redirect with error message for invalid credentials
-        header('Location: login?error=invalid_credentials');
+        session_start();
+        $_SESSION['login_error'] = 'Invalid credentials. Please try again.';
+        header('Location: login');
         exit();
     }
 }
-
     public function logout() {
        
             session_start();
@@ -198,6 +208,7 @@ public function login() {
 
         public function updateUser() {
             $postData = $_POST ?? [];
+            $errors = [];
         
             if (isset($_POST['updateUser'])) {
                 // Retrieve form data
@@ -208,8 +219,14 @@ public function login() {
                 $role_id = $postData['user_role'] ?? '';
                 $status = $postData['status'] ?? '';
             
-                // Perform validation as needed
-            
+                if (empty($username)) {
+                    $errors['username'] = "Username is required";
+                }else if (empty($email)) {
+                    $errors["email"] = "Email is required";
+                }else if (empty($phone_number)) {
+                    $errors["phone"] = "Phone is required";
+                }
+
                 // Create an instance of UserDAO
                 $userService = new UserServices();
             
@@ -232,11 +249,15 @@ public function login() {
                         header('Location: user-list');
                         exit();
                     } else {
-                        echo "Failed to update user.";
+                        $errors['update'] = "Failed to update user.";
                     }
                 } else {
-                    echo "User not found.";
+                    $errors['update'] = "User not found.";
                 }
+              
+        $_SESSION['updateUserErrors'] = $errors;
+        header('Location: update-user-form'); // Redirect back to the form
+        exit();
             }
         }
 

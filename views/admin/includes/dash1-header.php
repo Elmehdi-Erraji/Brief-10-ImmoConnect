@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 if (isset($_SESSION['role_id']) && $_SESSION['role_id'] != 1) {
    
-    header('Location: dashboard');
+    header('Location: login');
     exit();
 }
 use App\services\UserServices;

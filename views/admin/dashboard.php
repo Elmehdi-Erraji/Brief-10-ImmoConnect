@@ -1,4 +1,5 @@
 <?php
+
 require_once __DIR__ . '/../../vendor/autoload.php';
 
 
@@ -7,6 +8,8 @@ use App\Controllers\UserController;
 $data = new UserController();
 list($userCount) = $data->showData();
 
+$errors = $_SESSION['updateUserErrors'] ?? [];
+unset($_SESSION['updateUserErrors']); // Clear the errors after displaying them
 
 ?>
 <!DOCTYPE html>
@@ -44,9 +47,8 @@ list($userCount) = $data->showData();
     <div class="wrapper">
 
         <!-- ========== Topbar Start ========== -->
-
-        <?php include 'includes/dash1-header.php' ?>
-
+        <?php include 'includes/dash1-header.php';?>
+      
         <!-- ========== Topbar Start ========== -->
 
 
@@ -241,7 +243,7 @@ list($userCount) = $data->showData();
                                             <td>${row.role_id}</td>
                                             <td >
                                                 <a href="Delete?user_id=${row.id}" class="btn btn-danger">Delete</a>
-                                                <a href="user-update.php?user_id=${row.id}" class="btn btn-info">Update</a>
+                                                <a href="Update?user_id=${row.id}" class="btn btn-info">Update</a>
                                                                                                                 
                                             </td>
                                         `;
@@ -249,6 +251,7 @@ list($userCount) = $data->showData();
                                             tableBody.appendChild(newRow);
                                         });
                                     }
+                                    
                                 </script>
 
 
