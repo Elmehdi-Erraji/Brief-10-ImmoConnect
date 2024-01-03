@@ -46,12 +46,36 @@ class UserServices implements UserDAO{
         }
    }
 
-    public function getUserById($id){
-        echo $id;
+   
+   public function updateUser(User $user) {
+    // var_dump($user);
+    try {
+        $connection = db_conn::getConnection();
+
+        // Extract user attributes
+        $userId = $user->getId();
+        $username = $user->getUsername();
+        $email = $user->getEmail();
+        $phone = $user->getPhoneNumber();
+        $roleId = $user->getRoleId();
+        $status = $user->getStatut();
+
+        // Update user information in the users table
+        $query = "UPDATE users SET username=?, email=?, phone_number=?, role_id=?, statut=? WHERE id=?";
+        $stmt = $connection->prepare($query);
+
+        $stmt->execute([$username, $email, $phone, $roleId, $status, $userId]);
+
+       if($stmt){
+        return true;
+       } else{
+        return false;
+       }
+    } catch (PDOException $e) {
+        // Handle exceptions, log errors, or return a default value if something goes wrong
+        return false; // Default value if an error occurs
     }
-    public function updateUser(User $user){
-        echo $user->getUsername();
-    }
+}
    
 
 
@@ -193,6 +217,41 @@ class UserServices implements UserDAO{
     }
 
 
+    public  function getUserById($userId) {
+    try {
+        $connection = db_conn::getConnection();
 
+        $query = "SELECT * FROM users where id = ?";
+                  
+        $stmt = $connection->prepare($query);
+        $stmt->execute([$userId]);
+        
+        $user = null;
+        if ($stmt) {
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $user = new User(
+                    $row['username'],
+                    $row['email'],
+                    $row['phone_number'],
+                    $row['password'],
+                    $row['image'],
+                    $row['statut'],
+                    $row['role_id']
+                );
+    
+                // Optionally, you can set the 'id' using setId method if needed
+                $user->setId($row['id']);
+    
+              
+            }
+        }
+        
+        return $user;
+    } catch (PDOException $e) {
+        // Handle exceptions, log errors, or return a default value if something goes wrong
+        return null; // Default value if an error occurs
+    }
+
+}
     
 }

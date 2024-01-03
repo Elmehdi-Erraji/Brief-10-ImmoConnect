@@ -32,7 +32,7 @@
 
       
             <li class="side-nav-item">
-            <a href="dashboard.php" class="side-nav-link">
+            <a href="dashboard" class="side-nav-link">
                 <i class="ri-dashboard-3-line"></i>
                 <span> Dashboard </span>
             </a>

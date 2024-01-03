@@ -16,7 +16,8 @@ class HomeController{
     public function userList(){
         include __DIR__ .'../../../views/admin/user-list.php';
     }
-    public function userUpdate(){
+    public function Update(){
+       
         include __DIR__ .'../../../views/admin/user-update.php';
     }
 

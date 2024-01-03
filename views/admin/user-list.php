@@ -161,7 +161,7 @@ $users = $userController->getUsers();
                                                                     ?></td>
                                                             <td>
                                                                 <a href="Delete?user_id=<?php echo $user->getId(); ?>" class="btn btn-danger">Delete</a>
-                                                                <a href="Update" class="btn btn-info">Update</a>
+                                                                <a href="Update?user_id=<?php echo $user->getId(); ?>" class="btn btn-info">Update</a>
                                                             </td>
                                                         </tr>
                                                     <?php endforeach; ?>

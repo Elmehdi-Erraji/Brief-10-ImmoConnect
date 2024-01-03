@@ -184,11 +184,49 @@ class UserController{
 
 
 
-
-
-   public function userUpdate() {
-    header("location :user-update");
-   }
+        public function updateUser() {
+            $postData = $_POST ?? [];
+        
+            if (isset($_POST['updateUser'])) {
+                // Retrieve form data
+                $userId = $postData['user_id'] ?? '';
+                $username = $postData['username'] ?? '';
+                $email = $postData['email'] ?? '';
+                $phone_number = $postData['phone'] ?? '';
+                $role_id = $postData['user_role'] ?? '';
+                $status = $postData['status'] ?? '';
+            
+                // Perform validation as needed
+            
+                // Create an instance of UserDAO
+                $userService = new UserServices();
+            
+                // Get the user object by ID to check if it exists
+                $existingUser = $userService->getUserById($userId);
+            
+                if ($existingUser) {
+                    // Update the user object with the new data
+                    $existingUser->setUsername($username);
+                    $existingUser->setEmail($email);
+                    $existingUser->setPhoneNumber($phone_number);
+                    $existingUser->setRoleId($role_id);
+                    $existingUser->setStatut($status);
+            
+                    // Update the user in the database
+                    $result = $userService->updateUser($existingUser);
+            
+                    if ($result) {
+                        // User updated successfully
+                        header('Location: user-list');
+                        exit();
+                    } else {
+                        echo "Failed to update user.";
+                    }
+                } else {
+                    echo "User not found.";
+                }
+            }
+        }
 
 
 
@@ -226,6 +264,10 @@ class UserController{
             echo json_encode(array($data));
             exit; // Ensure no further output after sending JSON error response
         }
+    }
+
+    public function userUpdate(){
+
     }
  
     
