@@ -1,15 +1,5 @@
 <?php
-session_start();
-    if (!isset($_SESSION['user_id']) == 1) {
-        // Redirect to login page or handle unauthorized access
-        header('Location: /Brief-9-library-managment/views/auth/login.php');
-        exit();
-    }
-    if (isset($_SESSION['role_id']) && $_SESSION['role_id'] != 1) {
-        // Redirect to the user dashboard if the user's role ID is not an admin
-        header('Location: /Brief-9-library-managment/views/user/dashboard.php');
-        exit();
-    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -102,11 +92,11 @@ session_start();
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-lg-6">
-                                        <form action="AddUser" method="POST" id="addUserForm">
+                                        <form action="addUser" method="POST" id="addUserForm" enctype="multipart/form-data">
                                                 <!-- User Name -->
                                                 <div class="mb-3">
                                                     <label for="name" class="form-label">Usernmae</label>
-                                                    <input type="text" id="name" class="form-control" name="Usernmae" placeholder="First Name">
+                                                    <input type="text" id="name" class="form-control" name="username" placeholder="First Name">
                                                     <span id="nameError" class="error">
                                                     </span>
                                                 </div>
@@ -120,8 +110,8 @@ session_start();
                                                     </span>
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label for="name" class="form-label">phone</label>
-                                                    <input type="phone" id="name" class="form-control" name="phone" placeholder="Phone Number">
+                                                    <label for="phone" class="form-label">phone</label>
+                                                    <input type="phone" id="phone" class="form-control" name="phone" placeholder="Phone Number">
                                                     <span id="nameError" class="error">
                                                     </span>
                                                 </div>
@@ -130,7 +120,19 @@ session_start();
                                                     <label for="user_role" class="form-label">User Role</label>
                                                     <select class="form-select" id="user_role" name="user_role">
                                                         <option value="1">Admin</option>
-                                                        <option value="2">Client</option>
+                                                        <option value="2">Seller</option>
+                                                        <option value="3">Client</option>
+                                                        <!-- Add more options if needed -->
+                                                    </select>
+                                                    <span class="error" id="userRoleError">
+                                                    </span>
+                                                </div>
+                                                <!-- User Status -->
+                                                <div class="mb-3">
+                                                    <label for="statut" class="form-label">User Status</label>
+                                                    <select class="form-select" id="statut" name="status">
+                                                        <option value="0">Active</option>
+                                                        <option value="1">Desactivated</option>
                                                         <!-- Add more options if needed -->
                                                     </select>
                                                     <span class="error" id="userRoleError">
@@ -163,7 +165,7 @@ session_start();
 
                                                 <div class="mb-3">
                                                     <label for="file" class="form-label">Upload Image</label>
-                                                    <input type="file" id="file" name="user_image" class="form-control" accept="image/jpeg, image/png">
+                                                    <input type="file" id="file" name="user_image" class="form-control" accept="image/jpeg, image/png,image/jpg">
                                                 </div>
 
                                                 <button type="submit" id="submitButton" class="btn btn-primary" name="addUser">Submit</button>
@@ -213,20 +215,10 @@ session_start();
         <!-- Theme Settings -->
                
         
-        <!-- Vendor js -->
-        <script src="../../public/assets//js/vendor.min.js"></script>
-
-        <!-- Daterangepicker js -->
-        <script src="../../public/assets//vendor/daterangepicker/moment.min.js"></script>
-        <script src="../../public/assets//vendor/daterangepicker/daterangepicker.js"></script>
-        
-    
-        <!-- Dashboard App js -->
-        <script src="../../public/assets//js/pages/dashboard.js"></script>
-
-
-        <!-- App js -->
-        <script src="../../public/assets//js/app.min.js"></script>
+          <!-- Vendor js -->
+                 <script src="/Brief-10-ImmoConnect/app/routes/../../public/assets/js/vendor.min.js"></script>
+                <!-- App js -->
+                <script src="/Brief-10-ImmoConnect/app/routes/../../public/assets/js/app.min.js"></script>
 
     </body>
 </html> 

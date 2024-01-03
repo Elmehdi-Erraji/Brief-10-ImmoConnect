@@ -221,7 +221,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
                                             }
                                         };
 
-                                        xhr.open('GET', 'fetchUsers.php', true);
+                                        xhr.open('GET', 'fetchUsers', true);
                                         xhr.send();
                                     }
 

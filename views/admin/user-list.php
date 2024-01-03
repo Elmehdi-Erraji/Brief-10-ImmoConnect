@@ -1,10 +1,5 @@
 <?php
-// session_start();
-// if (!isset($_SESSION['user_id'])) {
-//     // Redirect to login page or handle unauthorized access
-//     header('Location: /Brief-9-library-managment/views/auth/login.php');
-//     exit();
-// }
+
 require_once __DIR__ . '/../../vendor/autoload.php';
 
 // include '../../app/controllers/UserController.php';
@@ -39,7 +34,7 @@ $users = $userController->getUsers();
     <!-- Icons css -->
     <link href="/Brief-10-ImmoConnect/app/routes/../../public/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
 
-  
+
     <!-- Icons css -->
     <link href="/Brief-10-ImmoConnect/app/routes/../../public/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
 </head>
@@ -104,7 +99,7 @@ $users = $userController->getUsers();
                                             <a data-bs-toggle="collapse" href="#yearly-sales-collapse" role="button" aria-expanded="false" aria-controls="yearly-sales-collapse"><i class="ri-subtract-line"></i></a>
                                             <a href="#" data-bs-toggle="remove"><i class="ri-close-line"></i></a>
                                         </div>
-                                        <a href="user-add.php"><button type="button" class="btn btn-info">Add a new User</button></a>
+                                        <a href="user-add"><button type="button" class="btn btn-info">Add a new User</button></a>
                                         <br>
                                         <br>
                                         <div class="app-search d-none d-lg-block">
@@ -136,16 +131,37 @@ $users = $userController->getUsers();
                                                 <tbody>
                                                     <?php foreach ($users as $user) : ?>
                                                         <tr>
-                                                        <td class="table-user">
-                                                        <img src="assets/images/users/avatar-2.jpg"  class="me-2 rounded-circle" /></td>
+                                                            <td class="table-user">
+                                                                <img src="/Brief-10-ImmoConnect/app/routes/<?php echo $user->getImage(); ?>" class="me-2 rounded-circle" />
+                                                            </td>
                                                             <td><?php echo $user->getUsername(); ?></td>
                                                             <td><?php echo $user->getEmail(); ?></td>
                                                             <td><?php echo $user->getPhoneNumber(); ?></td>
-                                                            <td><?php echo $user->getStatut(); ?></td>
-                                                            <td><?php echo $user->getRoleId(); ?></td>
+                                                            <td>
+                                                                <?php
+                                                                $status = $user->getStatut();
+                                                                if ($status === 0) {
+                                                                    echo '<span class="badge bg-warning-subtle text-warning">Active</span>';
+                                                                } else if ($status === 'not_returned') {
+                                                                    echo '<span class="badge bg-pink-subtle text-pink">Not Returned</span>';
+                                                                } else if ($status === 1) {
+                                                                    echo '<span class="badge bg-secondary">Desactive</span>';
+                                                                } 
+                                                                ?>
+                                                            </td>
+                                                            <td> <?php
+                                                                    $roleId = $user->getRoleId();
+                                                                    if ($roleId === 1) { // Adjust this condition based on your role IDs
+                                                                        echo '<span class="badge bg-primary">Admin</span>';
+                                                                    } else if ($roleId === 2) { // Adjust this condition based on your role IDs
+                                                                        echo '<span class="badge bg-info-subtle text-info">Seller</span>';
+                                                                    } else {
+                                                                        echo '<span class="badge bg-warning">Client</span>';
+                                                                    }
+                                                                    ?></td>
                                                             <td>
                                                                 <a href="Delete?user_id=<?php echo $user->getId(); ?>" class="btn btn-danger">Delete</a>
-                                                                <a href="Update?user_id=<?php echo $user->getId(); ?>" class="btn btn-info">Update</a>
+                                                                <a href="Update" class="btn btn-info">Update</a>
                                                             </td>
                                                         </tr>
                                                     <?php endforeach; ?>
@@ -194,10 +210,10 @@ $users = $userController->getUsers();
     <!-- Theme Settings -->
 
 
-                 <!-- Vendor js -->
-                 <script src="/Brief-10-ImmoConnect/app/routes/../../public/assets/js/vendor.min.js"></script>
-                <!-- App js -->
-                <script src="/Brief-10-ImmoConnect/app/routes/../../public/assets/js/app.min.js"></script>
+    <!-- Vendor js -->
+    <script src="/Brief-10-ImmoConnect/app/routes/../../public/assets/js/vendor.min.js"></script>
+    <!-- App js -->
+    <script src="/Brief-10-ImmoConnect/app/routes/../../public/assets/js/app.min.js"></script>
 
 </body>
 

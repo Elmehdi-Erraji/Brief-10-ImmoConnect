@@ -17,12 +17,14 @@ $router->setRoutes([
         'user-add'=>['HomeController' , 'userAdd'],
         'user-list'=>['HomeController' , 'userList'],
         'Delete'=>['UserController' , 'userDelete'],
+        'Update'=>['HomeController' , 'userUpdate'],
 
     ],
     'POST'=>[
+        'addUser'=>['UserController' , 'addUser'],
         'register'=>['UserController' , 'register'],
         'login'=>['UserController' , 'login'],
-        'AddUser'=>['UserController' , 'AddUser'],
+        
     ]
     
 ]);

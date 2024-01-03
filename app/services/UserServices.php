@@ -105,6 +105,57 @@ class UserServices implements UserDAO{
     
         return $users;
     }
+
+
+
+    public function addUser(User $user) {
+        $username = $user->getUsername();
+        $email = $user->getEmail();
+        $phone_number = $user->getPhoneNumber();
+        $password = password_hash($user->getPassword(), PASSWORD_DEFAULT);
+        $image = $user->getImage() ?: null; // Set default value for image as null
+        $status = $user->getStatut();
+        $role_id = $user->getRoleId();
+    
+        $connection = db_conn::getConnection();
+        $connection->beginTransaction(); // Begin a transaction
+    
+        try {
+            $insertUserQuery = "INSERT INTO users (username, email, phone_number, password, image, statut, role_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            $stmtInsertUser = $connection->prepare($insertUserQuery);
+    
+            if (!$stmtInsertUser) {
+                return false; // Failed to prepare statement
+            }
+    
+            $successInsertUser = $stmtInsertUser->execute([$username, $email, $phone_number, $password, $image, $status, $role_id]);
+    
+            if ($successInsertUser) {
+                $userId = $connection->lastInsertId();
+                $connection->commit();
+                return true; // User created successfully
+            } else {
+                $connection->rollBack();
+                return false; // User creation failed
+            }
+        } catch (PDOException $e) {
+            $connection->rollBack();
+            // Handle or log the exception
+            return false; // Return false indicating failure due to exception
+        }
+    }
+    
+    
+
+
+
+
+
+
+
+
+
+
     
     public function deleteUser($userId) {
         $connection = db_conn::getConnection();
@@ -122,5 +173,6 @@ class UserServices implements UserDAO{
             return false; // User not found or deletion failed
         }
     }
+
     
 }

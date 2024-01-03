@@ -45,6 +45,55 @@ class UserController{
     }
    
 
+    public function addUser(){
+        if (isset($_POST['addUser'])) {
+            $postData = $_POST ?? [];
+            $username = $postData['username'] ?? '';
+            $email = $postData['email'] ?? '';
+            $phone_number = $postData['phone'] ?? '';
+            $role_id = $postData['user_role'] ?? '';
+            $status = $postData['status'] ?? '';
+            $password = $postData['password'] ?? '';
+            // No image-related code here
+            $image = $_FILES['user_image'] ?? null;
+          // Check if an image was uploaded
+        if ($image && $image['error'] === UPLOAD_ERR_OK) {
+            $imagePath = $image['tmp_name']; // Temporary path of the uploaded image
+            
+            // Process image upload here (move the uploaded image to the desired directory)
+            $uploadDirectory = '../../public/assets/images/users/';
+            $imageName = basename($image['name']);
+            $uploadedImagePath = $uploadDirectory . $imageName;
+            
+            if (move_uploaded_file($imagePath, $uploadedImagePath)) {
+                // Image uploaded successfully
+                $image = $uploadedImagePath; // Update $image with the uploaded image path
+            } else {
+                // Handle image upload failure
+                $image = null; // Set image path to null or handle the error accordingly
+            }
+        } else {
+            // No image uploaded or an error occurred during upload
+            $image = null;
+        }
+
+        // Create User object including the image parameter
+        $user = new User($username, $email, $phone_number, $password, $image, $status, $role_id);
+        
+        $userServices = new UserServices();
+        $result = $userServices->addUser($user);
+
+        if ($result) {
+            header('Location:user-list');
+        } else {
+            return false;
+        }
+    }
+}
+
+
+
+
 
     public function login() {
         $postData = $_POST ?? [];
@@ -75,7 +124,7 @@ class UserController{
            
             // Redirect based on user's role
             if ($role === 1) {
-                header('Location: dashboard.php');
+                header('Location: dashboard');
                 exit();
             } elseif ($role === 2) {
                 header('Location: listings.php');
@@ -146,6 +195,9 @@ class UserController{
 
 
 
+   public function userUpdate() {
+    header("location :user-update");
+   }
 
 
 
@@ -155,36 +207,35 @@ class UserController{
 
 
 
-
-    // public function fetchUsers() {
-    //     try {
-    //         $dbConnection = db_conn::getConnection();
+    public function fetchUsers() {
+        try {
+            $dbConnection = db_conn::getConnection();
             
-    //         // Prepare SQL query
-    //         $query = "SELECT * FROM users";
+            // Prepare SQL query
+            $query = "SELECT * FROM users";
     
-    //         // Execute the query using PDO
-    //         $statement = $dbConnection->query($query);
+            // Execute the query using PDO
+            $statement = $dbConnection->query($query);
     
-    //         // Fetch data as associative array
-    //         $data = $statement->fetchAll(PDO::FETCH_ASSOC);
+            // Fetch data as associative array
+            $data = $statement->fetchAll(PDO::FETCH_ASSOC);
     
-    //         // Close the database connection properly
-    //         $dbConnection = null;
+            // Close the database connection properly
+            $dbConnection = null;
     
-    //         // Set response header to JSON
-    //         header('Content-Type: application/json');
+            // Set response header to JSON
+            header('Content-Type: application/json');
     
-    //         // Output data as JSON
-    //         echo json_encode($data);
-    //         exit; // Ensure no further output after sending JSON response
-    //     } catch (PDOException $e) {
-    //         // Handle any database connection errors
-    //         http_response_code(500); // Internal Server Error
-    //         echo json_encode(array($data);
-    //         exit; // Ensure no further output after sending JSON error response
-    //     }
-    // }
+            // Output data as JSON
+            echo json_encode($data);
+            exit; // Ensure no further output after sending JSON response
+        } catch (PDOException $e) {
+            // Handle any database connection errors
+            http_response_code(500); // Internal Server Error
+            echo json_encode(array($data));
+            exit; // Ensure no further output after sending JSON error response
+        }
+    }
  
     
 
