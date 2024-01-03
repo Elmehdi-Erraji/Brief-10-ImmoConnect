@@ -53,7 +53,7 @@
                         </div>
 					</div>
                     <div class="row p-5 bg-white">
-                        <form action="insert" method="POST" >
+                        <form action="insert" method="POST" enctype="multipart/form-data">
 								<div class="description">
 									<h5 class="text-secondary">Basic Information</h5><hr>
 								
@@ -133,17 +133,31 @@
 										
 										
 												
-										<!-- <h5 class="text-secondary">Image & Status</h5><hr>
+										 <h5 class="text-secondary">Image & Status</h5><hr>
 										<div class="row">
 											<div class="col-xl-6">
 												
 												<div class="form-group row">
 													<label class="col-lg-3 col-form-label">Image</label>
 													<div class="col-lg-9">
-														<input class="form-control" name="aimage" type="file" required="">
+														<input class="form-control" name="image1" type="file" accept="image/png, image/gif, image/jpeg" >
 													</div>
 												</div>
+
 												<div class="form-group row">
+													<label class="col-lg-3 col-form-label">Image</label>
+													<div class="col-lg-9">
+														<input class="form-control" name="image2" type="file" accept="image/png, image/gif, image/jpeg" >
+													</div>
+												</div>
+
+												<div class="form-group row">
+													<label class="col-lg-3 col-form-label">Image</label>
+													<div class="col-lg-9">
+														<input class="form-control" name="image3" type="file" accept="image/png, image/gif, image/jpeg" >
+													</div>
+												</div>
+												<!-- <div class="form-group row">
 													<label class="col-lg-3 col-form-label">Image 2</label>
 													<div class="col-lg-9">
 														<input class="form-control" name="aimage2" type="file" required="">
@@ -217,7 +231,7 @@
 													</div>
 												</div>
 											</div>
-										</div> -->
+										</div> --> 
 										<button class="btn btn-info " type="submit" name="submit" >Submit</button>
 										
 											

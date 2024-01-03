@@ -18,7 +18,7 @@ class PropertyServices implements PropertyDAO{
 
 
 
-    public function create($property){
+    public function create($property,$imgUrls){
        
         $stmt=$this->connection->prepare("INSERT INTO properties(adress,surface,room,shower,price,statut,type,description,user_id) Values(:adress,:surface,:room,:shower,:price,:statut,:type,:description,:user_id)");
         
@@ -43,12 +43,16 @@ class PropertyServices implements PropertyDAO{
         $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
        
         $stmt->execute();
-        // $lasInsertId =$this->connection->lastInsertId();
-        // $image=new Image();
-        // $stmt=$this->connection->prepare("INSERT INTO images Values(null,:imgUrl,:property_id)");
-        // $stmt->bindParam(':imgUrl',$image->getImgUrl(),PDO::PARAM_STR);
-        // $stmt->bindParam(':property_id',$lasInsertId,PDO::PARAM_INT);
-        // $stmt->execute();
+        $lastInsertId = $this->connection->lastInsertId();
+
+        foreach ($imgUrls as $imgUrl) {
+        $stmt = $this->connection->prepare("INSERT INTO images VALUES(null, :imgUrl, :property_id)");
+        $stmt->bindParam(':imgUrl', $imgUrl, PDO::PARAM_STR);
+        $stmt->bindParam(':property_id', $lastInsertId, PDO::PARAM_INT);
+        $stmt->execute();
+    }
+
+    var_dump($imgUrls);
         
       
     }
