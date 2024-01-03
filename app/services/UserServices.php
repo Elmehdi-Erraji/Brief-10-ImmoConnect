@@ -52,9 +52,7 @@ class UserServices implements UserDAO{
     public function updateUser(User $user){
         echo $user->getUsername();
     }
-    public function deleteUser($id) {
-        echo $id;
-    }
+   
 
 
     public function getUserByEmail($email) {
@@ -108,6 +106,21 @@ class UserServices implements UserDAO{
         return $users;
     }
     
-    
+    public function deleteUser($userId) {
+        $connection = db_conn::getConnection();
+
+       
+        $deleteUserQuery = "DELETE FROM users WHERE id = :userId";
+        $stmtUser = $connection->prepare($deleteUserQuery);
+        $stmtUser->bindParam(':userId', $userId, PDO::PARAM_INT);
+        $successUser = $stmtUser->execute();
+
+        // Check if both delete operations were successful
+        if ($successUser) {
+            return true; // Deletion successful
+        } else {
+            return false; // User not found or deletion failed
+        }
+    }
     
 }

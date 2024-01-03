@@ -16,6 +16,7 @@ $router->setRoutes([
         'fetchUsers'=>['UserController' , 'fetchUsers'],
         'user-add'=>['HomeController' , 'userAdd'],
         'user-list'=>['HomeController' , 'userList'],
+        'Delete'=>['UserController' , 'userDelete'],
 
     ],
     'POST'=>[

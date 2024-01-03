@@ -102,6 +102,42 @@ class UserController{
 
 
 
+    public function userDelete() {
+
+        if(isset($_GET['user_id'])){
+            $userId = $_GET['user_id'];
+
+            $userService = new UserServices();
+
+            $deleted = $userService->deleteUser($userId);
+
+            if ($deleted) {
+                header('Location: user-list');
+            } else {
+                echo "Failed to delete the user ";
+            }
+        }else {
+            echo "User id is missing ";
+        }
+
+    }
+
+    // public function AddUser($postData) {
+    //     $fullname = $postData['first-name'] ?? '';
+    //     $lastname = $postData['last-name'] ?? '';
+    //     $email = $postData['email'] ?? '';
+    //     $phone = $postData['phone'] ?? '';
+    //     $password = $postData['password'] ?? '';
+    //     $role = $postData['user_role'] ?? ''; // Assuming 'user_role' corresponds to the role ID
+
+    //     $user = new User($fullname, $lastname, $email, $phone, $password);
+    //     $user->setRole($role); // Set user role
+    //     $userDAO = new UserDAO();
+
+    //     $result = $userDAO->addUser($user);
+
+    //     return $result;
+    // }
 
 
 

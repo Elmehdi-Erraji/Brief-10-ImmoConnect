@@ -8,8 +8,8 @@
     <meta content="fully responsive." name="description" />
     <meta content="Mehdi" name="author" />
 
-    <!-- App favicon -->
     <link rel="shortcut icon" href="/Brief-10-ImmoConnect/app/routes/../../public/assets/images/favicon.ico">
+
 
     <!-- Theme Config Js -->
     <script src="/Brief-10-ImmoConnect/app/routes/../../public/assets/js/config.js"></script>
@@ -19,7 +19,11 @@
 
     <!-- Icons css -->
     <link href="/Brief-10-ImmoConnect/app/routes/../../public/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-</head>
+
+
+    <!-- Icons css -->
+    <link href="/Brief-10-ImmoConnect/app/routes/../../public/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    </head>
 
 <body>
     <!-- Begin page -->
@@ -581,13 +585,10 @@
     <!-- END wrapper -->
 
    
-    <!-- Vendor js -->
-    <script src="/Brief-10-ImmoConnect/app/routes/../../public/assets/js/vendor.min.js"></script>
-
-   
-
-    <!-- App js -->
-    <script src="/Brief-10-ImmoConnect/app/routes/../../public/assets/js/app.min.js"></script>
+        <!-- Vendor js -->
+        <script src="/Brief-10-ImmoConnect/app/routes/../../public/assets/js/vendor.min.js"></script>
+                <!-- App js -->
+                <script src="/Brief-10-ImmoConnect/app/routes/../../public/assets/js/app.min.js"></script>
 
 </body>
 

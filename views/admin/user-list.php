@@ -144,8 +144,8 @@ $users = $userController->getUsers();
                                                             <td><?php echo $user->getStatut(); ?></td>
                                                             <td><?php echo $user->getRoleId(); ?></td>
                                                             <td>
-                                                                <a href="../../app/controllers/UserController.php?action=delete&user_id=<?php echo $user->getId(); ?>" class="btn btn-danger">Delete</a>
-                                                                <a href="user-update.php?user_id=<?php echo $user->getId(); ?>" class="btn btn-info">Update</a>
+                                                                <a href="Delete?user_id=<?php echo $user->getId(); ?>" class="btn btn-danger">Delete</a>
+                                                                <a href="Update?user_id=<?php echo $user->getId(); ?>" class="btn btn-info">Update</a>
                                                             </td>
                                                         </tr>
                                                     <?php endforeach; ?>
