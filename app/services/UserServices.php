@@ -102,7 +102,7 @@ class UserServices implements UserDAO{
 
 
 
-    public static function getAllUsers() {
+    public static function getAllUserss() {
         $connection = db_conn::getConnection();
         $users = [];
     

@@ -161,8 +161,8 @@ public function login() {
         
     }
 
-    public function getUsers() {
-        $users = UserServices::getAllUsers();
+    public function getAllUsers() {
+        $users = UserServices::getAllUserss();
         return $users;
     }
 

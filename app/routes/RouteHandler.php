@@ -22,7 +22,9 @@ $router->setRoutes([
         'profile'=>['HomeController' , 'profile'],
         'new_property'=>['HomeController' , 'new_property'],
         'list'=>['PropertyController' , 'list'],
-        'deleteProperty'=>['PropertyController','delete']
+        'deleteProperty'=>['PropertyController','delete'],
+        'message'=>['MessageController', 'allMsgs'],
+        
 
     ],
     'POST'=>[
@@ -32,6 +34,7 @@ $router->setRoutes([
         'updateUser'=>['UserController' , 'updateUser'],
         'updateProfile'=>['UserController' , 'updateProfile'],
         'insert'=>['PropertyController' , 'insert'],
+        'insertMsg'=>['HomeController', 'insertMsg'],
 
         
     ]

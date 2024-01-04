@@ -7,7 +7,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 use App\Controllers\UserController;
 
 $userController = new UserController();
-$users = $userController->getUsers();
+$users = $userController->getAllUsers();
 
 ?>
 <!DOCTYPE html>

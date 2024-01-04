@@ -137,7 +137,12 @@ if (isset($_SESSION['role_id'])) {
                 <span> Dashboard </span>
             </a>
        
-        
+            <li class="side-nav-item">
+                <a href="users" class="side-nav-link">
+                <i class="ri-mail-line"></i>
+                    <span> Messages </span>
+                </a>
+             </li>
         <li class="side-nav-item">
             <a data-bs-toggle="collapse" href="#sidebarFAQ" aria-expanded="false" aria-controls="sidebarFAQ" class="side-nav-link">
                 <i class="ri-questionnaire-line"></i>
