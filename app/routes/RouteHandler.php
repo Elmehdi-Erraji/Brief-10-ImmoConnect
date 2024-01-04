@@ -36,7 +36,7 @@ $router->setRoutes([
         'updateUser'=>['UserController' , 'updateUser'],
         'updateProfile'=>['UserController' , 'updateProfile'],
         'insert'=>['PropertyController' , 'insert'],
-        'insertMsg'=>['HomeController', 'insertMsg'],
+        'insertMsg'=>['MessageController', 'insertMsg'],
         
     ]
     

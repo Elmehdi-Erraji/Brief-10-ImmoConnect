@@ -51,7 +51,7 @@
         </div>
 
         <!-- property-cards-start -->
-        <<<<<<< HEAD <div class="container py-5   ">
+ <div class="container py-5   ">
             <div class="tab-content ">
                 <div class=" p-0  ">
                     <div class="row ">
