@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +23,7 @@
     <!-- Icons css -->
     <link href="/Brief-10-ImmoConnect/app/routes/../../public/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
 
-  
+
     <!-- Icons css -->
     <link href="/Brief-10-ImmoConnect/app/routes/../../public/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
 
@@ -44,11 +43,11 @@
 
 
         <!-- ========== Topbar Start ========== -->
-        <?php include 'includes/dash1-header.php';?>
+        <?php include 'includes/dash1-header.php'; ?>
         <!-- ========== Topbar End ========== -->
 
         <!-- ========== Left Sidebar Start ========== -->
-        <?php include 'includes/dash1-menue.php';?>
+        <?php include 'includes/dash1-menue.php'; ?>
         <!-- ========== Left Sidebar End ========== -->
 
         <!-- ============================================================== -->
@@ -133,7 +132,7 @@
                                             <div id="edit-profile" class="tab-pane active">
                                                 <div class="user-profile-content">
                                                     <form action="updateProfile" method="POST" id="userForm" enctype="multipart/form-data">
-                                                    <input type="hidden" name="user_id" value="<?php echo $user->getId(); ?>">
+                                                        <input type="hidden" name="user_id" value="<?php echo $user->getId(); ?>">
                                                         <div class="row row-cols-sm-2 row-cols-1">
                                                             <div class="mb-2">
                                                                 <label class="form-label" for="FullName">Username</label>
@@ -196,26 +195,24 @@
                                                             }
 
                                                             // Check if passwords are provided and match
-                                                            if (password !== '' || rePassword !== '') {
-                                                                if (password === '') {
-                                                                    document.getElementById('passwordError').textContent = 'Password is required';
-                                                                    valid = false;
-                                                                } else if (password.length < 6 || password.length > 15) {
-                                                                    document.getElementById('passwordError').textContent = 'Password must be between 6 and 15 characters';
-                                                                    valid = false;
-                                                                } else {
-                                                                    document.getElementById('passwordError').textContent = '';
-                                                                }
+                                                            if (password === '') {
+                                                                document.getElementById('passwordError').textContent = 'Password is required';
+                                                                valid = false;
+                                                            } else if (password.length < 6 || password.length > 15) {
+                                                                document.getElementById('passwordError').textContent = 'Password must be between 6 and 15 characters';
+                                                                valid = false;
+                                                            } else {
+                                                                document.getElementById('passwordError').textContent = '';
+                                                            }
 
-                                                                if (rePassword === '') {
-                                                                    document.getElementById('rePasswordError').textContent = 'Please re-enter your password';
-                                                                    valid = false;
-                                                                } else if (rePassword !== password) {
-                                                                    document.getElementById('rePasswordError').textContent = 'Passwords do not match';
-                                                                    valid = false;
-                                                                } else {
-                                                                    document.getElementById('rePasswordError').textContent = '';
-                                                                }
+                                                            if (rePassword === '') {
+                                                                document.getElementById('rePasswordError').textContent = 'Please re-enter your password';
+                                                                valid = false;
+                                                            } else if (rePassword !== password) {
+                                                                document.getElementById('rePasswordError').textContent = 'Passwords do not match';
+                                                                valid = false;
+                                                            } else {
+                                                                document.getElementById('rePasswordError').textContent = '';
                                                             }
 
                                                             // Phone number validation
@@ -359,10 +356,10 @@
     <!-- END wrapper -->
 
 
-   <!-- Vendor js -->
-   <script src="/Brief-10-ImmoConnect/app/routes/../../public/assets/js/vendor.min.js"></script>
-                <!-- App js -->
-                <script src="/Brief-10-ImmoConnect/app/routes/../../public/assets/js/app.min.js"></script>
+    <!-- Vendor js -->
+    <script src="/Brief-10-ImmoConnect/app/routes/../../public/assets/js/vendor.min.js"></script>
+    <!-- App js -->
+    <script src="/Brief-10-ImmoConnect/app/routes/../../public/assets/js/app.min.js"></script>
 
 </body>
 
