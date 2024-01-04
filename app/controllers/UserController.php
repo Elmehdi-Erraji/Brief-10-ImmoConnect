@@ -102,7 +102,7 @@ public function login() {
 
     // Validate and sanitize input data as needed
 
-    // Instantiate UserDAO
+    // Instantiate UserService
     $userServices = new UserServices();
 
     // Get user details by email
@@ -128,7 +128,7 @@ public function login() {
                 header('Location: dashboard');
                 exit();
             } elseif ($role === 2) {
-                header('Location: listings');
+                header('Location: announcment-list');
                 exit();
             } else {
                 header('Location: profile');
@@ -256,19 +256,13 @@ public function login() {
                 }
               
         $_SESSION['updateUserErrors'] = $errors;
-        header('Location: update-user-form'); // Redirect back to the form
+        header('Location: user-update'); // Redirect back to the form
         exit();
             }
         }
 
 
-
-
-
-
-
-
-
+     
     public function fetchUsers() {
         try {
             $dbConnection = db_conn::getConnection();

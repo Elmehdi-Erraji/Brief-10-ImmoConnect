@@ -22,7 +22,7 @@ class HomeController{
     }
     public function profile(){
        
-        include __DIR__ .'../../../views/profile.php';
+        include __DIR__ .'../../../views/admin/profile.php';
     }
 
 

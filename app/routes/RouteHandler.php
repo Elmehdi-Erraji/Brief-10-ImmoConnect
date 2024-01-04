@@ -28,6 +28,8 @@ $router->setRoutes([
         'register'=>['UserController' , 'register'],
         'login'=>['UserController' , 'login'],
         'updateUser'=>['UserController' , 'updateUser'],
+        'updateProfile'=>['UserController' , 'updateProfile'],
+        
         
     ]
     
