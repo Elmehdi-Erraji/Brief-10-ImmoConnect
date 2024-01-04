@@ -127,16 +127,12 @@ public function login() {
             if ($role === 1) {
                 header('Location: dashboard');
                 exit();
-            } elseif ($role === 2) {
-                header('Location: announcment-list');
-                exit();
-            } else {
+            } else if ($role === 2 || $role === 3) {
                 header('Location: profile');
                 exit();
             }
         } else {
-            // User status is not active (banned)
-            // Set error message in session and redirect to login page
+           
             session_start();
             $_SESSION['login_error'] = 'Your account has been banned. Please contact the admin.';
             header('Location: login');
@@ -146,7 +142,7 @@ public function login() {
         // Redirect with error message for invalid credentials
         session_start();
         $_SESSION['login_error'] = 'Invalid credentials. Please try again.';
-        header('Location: login');
+        header('Location: test');
         exit();
     }
 }

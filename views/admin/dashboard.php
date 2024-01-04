@@ -11,6 +11,9 @@ list($userCount) = $data->showData();
 $errors = $_SESSION['updateUserErrors'] ?? [];
 unset($_SESSION['updateUserErrors']); // Clear the errors after displaying them
 
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
