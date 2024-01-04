@@ -46,9 +46,21 @@ class UserServices implements UserDAO{
         }
    }
 
-    public function getUserById($id){
-        echo $id;
+   public function getUserById($id) {
+    $query = "SELECT * FROM users WHERE id = :id";
+
+    try {
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $user ? $user : null; // Return the user details as an associative array or null if not found
+    } catch (PDOException $e) {
+        // Handle the exception or log the error
+        return null; // Return null if an exception occurs
     }
+}
     public function updateUser(User $user){
         echo $user->getUsername();
     }
@@ -69,6 +81,19 @@ class UserServices implements UserDAO{
             } else {
                 return null; // User not found
             }
+        } catch (PDOException $e) {
+            // Handle the exception appropriately
+            echo "Error: " . $e->getMessage();
+            return null;
+        }
+    }
+    public function getAllUsers() {
+        try {
+            $query = "SELECT * FROM users";
+            $stmt = $this->db->query($query);
+            $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            return $users; // Return an array of users' details
         } catch (PDOException $e) {
             // Handle the exception appropriately
             echo "Error: " . $e->getMessage();

@@ -1,4 +1,16 @@
+<?php
+require_once __DIR__ . '/../../vendor/autoload.php';
+use App\services\UserServices;
 
+
+
+
+
+  session_start();
+  if(!isset($_SESSION['user_id'])){
+    header("location: login");
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +37,7 @@
     <link href="/Brief-10-ImmoConnect/app/routes/../../public/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
 
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  <link rel="stylesheet" href="/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
   <style>
      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
       *{
@@ -644,10 +656,19 @@
     <section class="users">
       <header>
         <div class="content">
+          <?php
+          $id=$_SESSION['user_id'];
+          $User = new UserServices();
+          $user = $User->getUserById($id);
+                                                      
+                
+    ?>
+
+          ?>
           <img src="#" alt="">
-          <div class="details">
-            <span>titima</span>
-            <p>activ now</p>
+            <div class="details">
+            <span><?php echo $user['username'] ?></span>
+            <p><?php echo $user['statut']; ?></p>
           </div>
         </div>
       </header>
@@ -656,39 +677,25 @@
         <input type="text" placeholder="Enter name to search...">
         <button><i class="fas fa-search"></i></button>
       </div>
+      <?php
+       foreach ($users as $user) {
+        ?>
       <div class="users-list">
-        <a href="message">
-            <div class="centent">
-              <img src="$" alt="">
-              <div class="details">
-                <span>fatima ezahrae</span>
-                <p>this is test message</p>
-              </div>
-            </div>
-            <div class="status-dot"><i class="fas fa-circle"></i></div>
-        </a>
-        <a href="message">
-            <div class="centent">
-              <img src="$" alt="">
-              <div class="details">
-                <span>fatima ezahrae</span>
-                <p>this is test message</p>
-              </div>
-            </div>
-            <div class="status-dot"><i class="fas fa-circle"></i></div>
-        </a>
-        <a href="message">
-            <div class="centent">
-              <img src="$" alt="">
-              <div class="details">
-                <span>fatima ezahrae</span>
-                <p>this is test message</p>
-              </div>
-            </div>
-            <div class="status-dot"><i class="fas fa-circle"></i></div>
-        </a>
-  
+      
+      
+            <a href="message?id=<?php echo $user['id']?>">
+                <div class="centent">
+                    <img src="#" alt="">
+                    <div class="details">
+                        <span><?= $user['username'] ?></span>
+                        <p>this is test message</p>
+                    </div>
+                </div>
+                <div class="status-dot"><i class="fas fa-circle"></i></div>
+            </a>
+        
       </div>
+      <?php }?>
     </section>
   </div>
 
@@ -749,43 +756,6 @@
           searchBar.classList.remove("active");
         }
       }
-
-      // searchBar.onkeyup = ()=>{
-      //   let searchTerm = searchBar.value;
-      //   if(searchTerm != ""){
-      //     searchBar.classList.add("active");
-      //   }else{
-      //     searchBar.classList.remove("active");
-      //   }
-      //   let xhr = new XMLHttpRequest();
-      //   xhr.open("POST", "php/search.php", true);
-      //   xhr.onload = ()=>{
-      //     if(xhr.readyState === XMLHttpRequest.DONE){
-      //         if(xhr.status === 200){
-      //           let data = xhr.response;
-      //           usersList.innerHTML = data;
-      //         }
-      //     }
-      //   }
-      //   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      //   xhr.send("searchTerm=" + searchTerm);
-      // }
-
-      // setInterval(() =>{
-      //   let xhr = new XMLHttpRequest();
-      //   xhr.open("GET", "php/users.php", true);
-      //   xhr.onload = ()=>{
-      //     if(xhr.readyState === XMLHttpRequest.DONE){
-      //         if(xhr.status === 200){
-      //           let data = xhr.response;
-      //           if(!searchBar.classList.contains("active")){
-      //             usersList.innerHTML = data;
-      //           }
-      //         }
-      //     }
-      //   }
-      //   xhr.send();
-      // }, 500);
 
 
  </script>

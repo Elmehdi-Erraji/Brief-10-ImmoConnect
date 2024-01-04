@@ -1,3 +1,12 @@
+<?php
+require_once __DIR__ . '/../../vendor/autoload.php';
+use App\services\UserServices;
+
+
+  if(!isset($_SESSION['user_id'])){
+    header("location: login");
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -636,6 +645,13 @@
 
         <div class="content-page">
             <div class="content">
+            <?php
+          $id=$_GET['id'];
+          // var_dump($id);
+          $User = new UserServices();
+          $user = $User->getUserById($id);
+                                                            
+    ?>
 
                 <!-- Start Content-->
                 <div class="container-fluid">
@@ -645,48 +661,51 @@
         <a href="users.php" class="back-icon"><i class="fas fa-arrow-left"></i></a>
         <img src="path_to_your_image.jpg" alt="User Image">
         <div class="details">
-          <span>titima</span>
-          <p>active now</p>
+          <span><?php echo $user['username'] ?></span>
+          <p><?php echo $user['statut']; ?></p>
         </div>
       </header>
       <div class="chat-box">
-        <div class="chat outgoing">
-            <div class="details">
-                <p>hi my name is Fatima Ezahrae, and you?</p>
+    <?php
+    foreach ($mesgs as $msg) {
+        if ($msg->getSenderId() === $_SESSION['user_id']) {
+            // Message sortant (envoyé par l'utilisateur actuel)
+    ?>
+            <div class="chat outgoing">
+                <div class="details">
+                    <p><?php echo $msg->getMessage() ?></p>
+                </div>
             </div>
-        </div>
-        <div class="chat incoming">
-            <img src="path_to_other_user_image.jpg" alt="Other User Image">
-            <div class="details">
-                <p>hi, my name is Titima. Nice to meet you!</p>
+    <?php } else {
+            // Message entrant (reçu d'un autre utilisateur)
+    ?>
+            <div class="chat incoming">
+                <img src="path_to_other_user_image.jpg" alt="Other User Image">
+                <div class="details">
+                    <p><?php echo $msg->getMessage() ?></p>
+                </div>
             </div>
-        </div>
-        <div class="chat outgoing">
-            <div class="details">
-                <p>hi my name is Fatima Ezahrae, and you?</p>
-            </div>
-        </div>
-        <div class="chat incoming">
-            <img src="path_to_other_user_image.jpg" alt="Other User Image">
-            <div class="details">
-                <p>hi, my name is Titima. Nice to meet you!</p>
-            </div>
-        </div>
-      </div>
-      <form action="#" class="typing-area">
-        <input type="text" placeholder="Type a message here...">
-        <button><i class="fab fa-telegram-plane"></i></button>
-      </form>
+    <?php } ?>
+<?php } ?>
+</div>
+      <form method="POST" action="insertMsg"  class="typing-area">
+    <input type="hidden" name="outgoing_id" value="<?php echo $_SESSION['user_id'];?>">
+    <input type="hidden" name="incoming_id" value="<?php echo $id;?>">
+    <input type="text" name="message" class="input-field" placeholder="Type a message here...">
+    <button type="submit" name="send"><i class="fab fa-telegram-plane"></i></button>
+</form>
+
+
     </section>
   </div>
 
-  <script src="javascript/users.js"></script>
+  <!-- <script src="javascript/users.js"></script> -->
 
      
     </div>
                 <!-- end row -->
 
-            </div>
+          
             <!-- container -->
         </div>
         <!-- content -->

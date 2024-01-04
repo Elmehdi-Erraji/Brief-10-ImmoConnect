@@ -43,7 +43,11 @@ class UserController{
         }
     }
     }
-   
+    public function getUsers() {
+        $users = new UserServices();
+        $all= $users->getAllUsers();
+        return $all;
+    }
 
 
     public function login() {
@@ -58,7 +62,7 @@ class UserController{
         // Get user details by email
         $user = $userServices->getUserByEmail($email);
 
-        if ($user['password'] == $password) {
+        if ($user['PASSWORD'] == $password) {
             // Start a session
             session_start();
 
@@ -81,7 +85,7 @@ class UserController{
                 header('Location: listings.php');
                 exit();
             } else {
-                header('Location: error');
+                header('Location: users');
                 exit(); 
                
             }
