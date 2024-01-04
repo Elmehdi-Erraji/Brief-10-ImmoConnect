@@ -1,13 +1,15 @@
 <?php 
 
-namespace app\DAO;
+namespace App\DAO;
 
-use app\models\Property;
+use App\models\Property;
+use App\models\Image;
 
 interface PropertyDAO{
     public function create(Property $property,$imgUrl);
     public function getPropertyById($id);
     public function getAllPropreties();
-    public function update(Property $property);
+    public function update(Property $property,Image $image);
     public function delete(Property $property); 
+
 }

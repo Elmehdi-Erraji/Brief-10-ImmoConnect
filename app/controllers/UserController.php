@@ -1,10 +1,10 @@
 <?php
 
-namespace app\Controllers;
+namespace App\Controllers;
 require_once __DIR__ . '/../../vendor/autoload.php';
 
-use app\Models\User;
-use app\services\UserServices;
+use App\Models\User;
+use App\services\UserServices;
 class UserController{
 
     public function register() {

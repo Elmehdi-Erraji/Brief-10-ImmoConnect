@@ -64,7 +64,7 @@
         <?php
 
 
-        use app\services\PropertyServices;
+        use App\services\PropertyServices;
 
         require '../vendor/autoload.php';
 
@@ -101,9 +101,11 @@
                                     <h5 class="  px-3" style="color:#1874A2">Tom Willson</h5>
                                     <h5 class=" px-5" style="color:#1874A2"><?php echo $property['price']; ?></h5>
                                 </div>
+                                <a href="delete?id=<?php echo $property['id']?>"><i class='fas fa-trash-alt btndelete'  style='cursor: pointer; '></i>Delete</a>
+                        <?php } ?>
                             </div>
                         </div>
-                        <?php } ?>
+                      
 
 
                          <!-- card -->

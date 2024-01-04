@@ -1,5 +1,5 @@
 <?php
-namespace app\controllers;
+namespace App\controllers;
 class HomeController{
     public function index(){
         include __DIR__ .'../../../views/profile.php';
@@ -11,4 +11,7 @@ class HomeController{
 
         include __DIR__ .'../../../views/properties/new_property.php';
     }
+    // public function list(){
+    //     include __DIR__ .'../../../views/list.php';
+    // }
 }

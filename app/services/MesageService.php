@@ -1,9 +1,9 @@
 <?php
-namespace app\services;
+namespace App\services;
 include __DIR__ . '../../../vendor/autoload.php';
 
-use app\config\db_conn;
-use app\models\Message;
+use App\config\db_conn;
+use App\models\Message;
 use PDO, PDOException;
 class MessageService {
     private $database;

@@ -1,6 +1,6 @@
 <?php
 // include __DIR__ . '/vendor/autoload.php';
-// use app\config; 
+// use App\config; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +10,7 @@
     <title>Document</title>
 </head>
 <body>
-    hiiiiii
+   kk
     
 </body>
 </html>

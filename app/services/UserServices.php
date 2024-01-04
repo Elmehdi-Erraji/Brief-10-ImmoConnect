@@ -1,14 +1,14 @@
 <?php
 
 
-namespace app\services;
+namespace App\services;
 require_once __DIR__ . '/../../vendor/autoload.php';
 
-use app\Models\User;
+use App\Models\User;
 
-use app\DAO\UserDAO;
+use App\DAO\UserDAO;
 
-use app\config\db_conn;
+use App\config\db_conn;
 
 
 class UserServices implements UserDAO{

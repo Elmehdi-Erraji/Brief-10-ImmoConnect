@@ -1,5 +1,5 @@
 <?php
-namespace app\controllers;
+namespace App\controllers;
 class AuthController{
     public function signup(){
         include __DIR__ .'../../../views/auth/register.php';

@@ -1,13 +1,18 @@
 <?php
 
-namespace app\controllers;
+namespace App\controllers;
 
-use app\models\Property;
-use app\services\PropertyServices;
+use App\models\Image;
+use App\models\Property;
+use App\services\PropertyServices;
 
 require '../../vendor/autoload.php';
 
 class PropertyController{
+
+    public function list(){
+        include __DIR__ .'../../../views/list.php';
+    }
 
     public function insert(){
         $postData = $_POST ?? [];
@@ -59,13 +64,22 @@ class PropertyController{
         
 
         $property=new Property($id,$adress,$surface,$room,$shower,$price,$statut,$type,$description,$user_id);
-
+        $image = new Image(null,null,$id);
         $propertyService=new PropertyServices();
 
-        $propertyService->update($property);
+        $propertyService->update($property,$image);
 
-      
+    
+    }
 
+    public function delete(){
+        
+       if(isset($_GET['id']))
+       {
+        $id = $_GET['id'];
+        echo $id;
+        header("location:profile");
+       }
     }
 
 }
