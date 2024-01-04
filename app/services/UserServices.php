@@ -49,7 +49,7 @@ class UserServices implements UserDAO{
    }
 
 
-//    public function getUserById($id) {
+//    public function getUserByidmesage($id) {
 //     $query = "SELECT * FROM users WHERE id = :id";
 
 //     try {
@@ -63,7 +63,7 @@ class UserServices implements UserDAO{
 //         // Handle the exception or log the error
 //         return null; // Return null if an exception occurs
 //     }
-//}
+// }
     
    
    public function updateUser(User $user) {
