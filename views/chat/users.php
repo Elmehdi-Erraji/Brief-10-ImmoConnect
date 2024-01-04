@@ -545,6 +545,7 @@ use App\services\UserServices;
 
                         <!-- item-->
                         <a href="login" class="dropdown-item">
+                        <a href="logout" class="dropdown-item">
                             <i class="ri-logout-box-line fs-18 align-middle me-1"></i>
                             <span>Logout</span>
                         </a>

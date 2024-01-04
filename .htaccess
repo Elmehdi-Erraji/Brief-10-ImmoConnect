@@ -2,7 +2,7 @@
     RewriteEngine On
 
     # Exclude specific directories from the rewrite
-    RewriteRule ^(?:public\/assets\/(?:js|css|images|imgs|fonts)\/) - [L]
+    RewriteRule ^(?:public/assets/(?:js|css|images|imgs|fonts)/) - [L]
 
     # Rewrite all other requests to app/routes/RouteHandler.php?url=<request>
     # RewriteCond %{REQUEST_FILENAME} !-f

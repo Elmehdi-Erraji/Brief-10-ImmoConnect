@@ -1,3 +1,20 @@
+<?php 
+
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    
+    header('Location: login');
+    exit();
+}
+
+use App\services\UserServices;
+// Fetch user details by ID using UserDAO method
+$userService = new UserServices();
+$userId = $_SESSION['user_id'];
+// Fetch user details by ID using UserServices instance method
+$user = $userService->getUserById($userId);
+
+?>
 <div class="navbar-custom">
         <div class="topbar container-fluid">
             <div class="d-flex align-items-center gap-1">
@@ -20,7 +37,7 @@
                             <img src="/Brief-10-ImmoConnect/app/routes/../../public/assets/images/logo-sm.png" alt="dark logo">
                         </span>
                         <span class="logo-sm">
-                            <img src="..//Brief-10-ImmoConnect/app/routes/../../public/assets/images/logo-sm.png" >
+                            <img src="/Brief-10-ImmoConnect/app/routes/../../public/assets/images/logo-sm.png" >
                         </span>
                     </a>
                 </div>
@@ -91,7 +108,7 @@
                                     <div class="d-flex align-items-center">
                                         <div class="flex-shrink-0">
                                             <div class="notify-icon">
-                                                <img src="/Brief-10-ImmoConnect/app/routes/../../public/assets/images/users/avatar-1.jpg" class="img-fluid rounded-circle"
+                                                <!-- <img src="/Brief-10-ImmoConnect/app/routes/" class="img-fluid rounded-circle" -->
                                                     alt="" />
                                             </div>
                                         </div>
@@ -143,10 +160,10 @@
                     <a class="nav-link dropdown-toggle arrow-none nav-user" data-bs-toggle="dropdown" href="#" role="button"
                         aria-haspopup="false" aria-expanded="false">
                         <span class="account-user-avatar">
-                            <img src="/Brief-10-ImmoConnect/app/routes/../../public/assets/images/users/avatar-1.jpg" alt="user-image" width="32" class="rounded-circle">
+                            <img src="/Brief-10-ImmoConnect/app/routes/<?php echo $user->getImage(); ?>"  width="32" class="rounded-circle">
                         </span>
                         <span class="d-lg-block d-none">
-                            <h5 class="my-0 fw-normal">Thomson <i
+                            <h5 class="my-0 fw-normal"><?php echo $user->getUsername(); ?> <i
                                     class="ri-arrow-down-s-line d-none d-sm-inline-block align-middle"></i></h5>
                         </span>
                     </a>
@@ -157,19 +174,19 @@
                         </div>
 
                         <!-- item-->
-                        <a href="pages-profile.html" class="dropdown-item">
+                        <a href="profile" class="dropdown-item">
                             <i class="ri-account-circle-line fs-18 align-middle me-1"></i>
                             <span>My Account</span>
                         </a>
 
                         <!-- item-->
-                        <a href="auth-lock-screen.html" class="dropdown-item">
+                        <a href="logout" class="dropdown-item">
                             <i class="ri-lock-password-line fs-18 align-middle me-1"></i>
                             <span>Lock Screen</span>
                         </a>
 
                         <!-- item-->
-                        <a href="auth-logout-2.html" class="dropdown-item">
+                        <a href="logout" class="dropdown-item">
                             <i class="ri-logout-box-line fs-18 align-middle me-1"></i>
                             <span>Logout</span>
                         </a>

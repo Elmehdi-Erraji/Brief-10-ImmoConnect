@@ -43,6 +43,7 @@ class db_conn{
 
 $connection = db_conn::getConnection();
 
-if($connection){
-    echo "Db is connected";
+if(!$connection){
+    echo "Db is not connected";
 }
+

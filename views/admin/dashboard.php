@@ -1,12 +1,16 @@
 <?php
+
 require_once __DIR__ . '/../../vendor/autoload.php';
 
-// include '../../app/controllers/UserController.php';
 
-// use App\Controllers\UserController;
+use App\Controllers\UserController;
 
-// $data = new UserController();
-// list($userCount, $bookCount, $reservationcount) = $data->showData();
+$data = new UserController();
+list($userCount) = $data->showData();
+
+$errors = $_SESSION['updateUserErrors'] ?? [];
+unset($_SESSION['updateUserErrors']); // Clear the errors after displaying them
+
 
 
 
@@ -16,7 +20,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 
 <head>
     <meta charset="utf-8" />
-    <title>Profile </title>
+    <title>Dashboard </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="fully responsive." name="description" />
     <meta content="Mehdi" name="author" />
@@ -46,9 +50,8 @@ require_once __DIR__ . '/../../vendor/autoload.php';
     <div class="wrapper">
 
         <!-- ========== Topbar Start ========== -->
-
-        <?php include 'includes/dash1-header.php' ?>
-
+        <?php include 'includes/dash1-header.php';?>
+      
         <!-- ========== Topbar Start ========== -->
 
 
@@ -96,7 +99,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
                                         <i class="ri-group-2-line widget-icon"></i>
                                     </div>
                                     <h6 class="text-uppercase mt-0" title="Customers">Users</h6>
-                                    <h2 class="my-2">5</h2>
+                                    <h2 class="my-2"><?php echo $userCount; ?></h2>
 
                                 </div>
                             </div>
@@ -108,8 +111,8 @@ require_once __DIR__ . '/../../vendor/autoload.php';
                                     <div class="float-end">
                                         <i class="ri-shopping-basket-line widget-icon"></i>
                                     </div>
-                                    <h6 class="text-uppercase mt-0" title="Customers">Books</h6>
-                                    <h2 class="my-2">6</h2>
+                                    <h6 class="text-uppercase mt-0" title="Customers">Properties</h6>
+                                    <h2 class="my-2">5</h2>
 
                                 </div>
                             </div>
@@ -160,8 +163,8 @@ require_once __DIR__ . '/../../vendor/autoload.php';
                                                         <th>Username</th>
                                                         <th>E-mail</th>
                                                         <th>Phone</th>
-                                                        <th>Role</th>
                                                         <th>Status</th>
+                                                        <th>Role</th>
                                                         <th>Actions</th>
                                                     </tr>
                                                 </thead>
@@ -225,14 +228,8 @@ require_once __DIR__ . '/../../vendor/autoload.php';
                                         xhr.send();
                                     }
 
-                                    const roleNames = {
-                                        1: 'Admin',
-                                        2: 'Seller',
-                                        3: 'Client'
-                                    };
-
                                         function populateTable(data) {
-                                           
+                                           console.log(data);
                                         var tableBody = document.getElementById('tableBody');
                                         tableBody.innerHTML = '';
 
@@ -244,12 +241,12 @@ require_once __DIR__ . '/../../vendor/autoload.php';
                                             <td>${row.id}</td>
                                             <td>${row.username}</td>
                                             <td>${row.email}</td>
-                                            <td>${row.phone}</td>
-                                            <td>${row.role_id}</td>
+                                            <td>${row.phone_number}</td>
                                             <td>${row.statut}</td>
+                                            <td>${row.role_id}</td>
                                             <td >
-                                                <a href="../../app/controllers/UserController.php?action=delete&user_id=${row.id}" class="btn btn-danger">Delete</a>
-                                                <a href="user-update.php?user_id=${row.id}" class="btn btn-info">Update</a>
+                                                <a href="Delete?user_id=${row.id}" class="btn btn-danger">Delete</a>
+                                                <a href="Update?user_id=${row.id}" class="btn btn-info">Update</a>
                                                                                                                 
                                             </td>
                                         `;
@@ -257,6 +254,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
                                             tableBody.appendChild(newRow);
                                         });
                                     }
+                                    
                                 </script>
 
 
