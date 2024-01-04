@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +18,7 @@
 <body>
     <main>
 
-    <!-- jumbotron -->
+        <!-- jumbotron -->
         <div class="jumbotron jumbotron-fluid" style="background-image:url('/public/imgs/cover-img.jpg');background-size: cover;background-position: center;height: 70vh;display: flex; align-items: center;">
             <div class="container">
                 <h1 class=" text-white text-center p-4" style="font-size:32px;font-family:roboto">Find Your Dream House</h1>
@@ -50,13 +49,11 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- property-cards-start -->
-       
-        
-        <div class="container py-5   ">
+        <<<<<<< HEAD <div class="container py-5   ">
             <div class="tab-content ">
-                <div  class=" p-0  ">
+                <div class=" p-0  ">
                     <div class="row ">
                         <!-- card -->
                         <div class="col-lg-4 col-md-6 mx-2 my-4" style="border-radius: 15px;box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);max-width: 360px;">
@@ -79,180 +76,238 @@
                                         <small class="flex-fill text-center  mx-3 py-2"><i class="fa-solid fa-door-open " style="color:#1874A2"></i>3</small>
                                         <small class="flex-fill text-center  mx-3 py-2"><i class="fa fa-bed  me-2" style="color:#1874A2"></i>3</small>
                                         <small class="flex-fill text-center  py-2"><i class="fa fa-ruler-combined  me-2" style="color:#1874A2"></i>100 m²</small>
-                                    </div>
-
-                                </div>
-                                <div class="d-flex border-top p-3">
-                                    <h5 class="  px-3" style="color:#1874A2">Tom Willson</h5>
-                                    <h5 class=" px-5" style="color:#1874A2">$350.000</h5>
-                                </div>
-                            </div>
-                        </div>
-
-                         <!-- card -->
-
-                         <div class="col-lg-4 col-md-6 mx-2 my-4" style="border-radius: 15px;box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);max-width: 360px;">
-                            <div class="property-item rounded overflow-hidden">
-                                <div class="position-relative overflow-hidden">
-                                    <a href=""><img class="img-fluid" src="../public/imgs/house-img-1.webp" alt="" id="zoom"></a>
-                                </div>
-                                <div class="p-4 pb-0">
-                                    <div class="bg-custom-color rounded text-white d-inline-block" style="background-color: #1874A2">House</div>
-                                    <a class="d-block h5 mb-2 mt-2" href="" style="color:#1874A2; text-decoration:none">Ample Apartment At Last Floor</a>
-                                    <p><i class="fa fa-map-marker-alt  me-2" style="color:#1874A2"></i>West flaminggo road, las vegas</p>
-                                    <div>
-                                        <small class="flex-fill  mx-2 py-2">Baths</small>
-                                        <small class="flex-fill  mx-2 py-2">Rooms</small>
-                                        <small class="flex-fill  mx-2 py-2">Beds</small>
-                                        <small class="flex-fill  mx-2 py-2">Area</small>
-                                    </div>
-                                    <div class="pb-3">
-                                        <small class="flex-fill text-center mx-2 py-2 "><i class="fa fa-bath  me-2" style="color:#1874A2"></i>2</small>
-                                        <small class="flex-fill text-center  mx-3 py-2"><i class="fa-solid fa-door-open " style="color:#1874A2"></i>3</small>
-                                        <small class="flex-fill text-center  mx-3 py-2"><i class="fa fa-bed  me-2" style="color:#1874A2"></i>3</small>
-                                        <small class="flex-fill text-center  py-2"><i class="fa fa-ruler-combined  me-2" style="color:#1874A2"></i>100 m²</small>
-                                    </div>
-
-                                </div>
-                                <div class="d-flex border-top p-3">
-                                    <h5 class="  px-3" style="color:#1874A2">Tom Willson</h5>
-                                    <h5 class=" px-5" style="color:#1874A2">$350.000</h5>
-                                </div>
-                            </div>
-                        </div>
 
 
-                         <!-- card -->
 
-                         <div class="col-lg-4 col-md-6 mx-2 my-4" style="border-radius: 15px;box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);max-width: 360px;">
-                            <div class="property-item rounded overflow-hidden">
-                                <div class="position-relative overflow-hidden">
-                                    <a href=""><img class="img-fluid" src="../public/imgs/house-img-1.webp" alt="" id="zoom"></a>
-                                </div>
-                                <div class="p-4 pb-0">
-                                    <div class="bg-custom-color rounded text-white d-inline-block" style="background-color: #1874A2">House</div>
-                                    <a class="d-block h5 mb-2 mt-2" href="" style="color:#1874A2; text-decoration:none">Ample Apartment At Last Floor</a>
-                                    <p><i class="fa fa-map-marker-alt  me-2" style="color:#1874A2"></i>West flaminggo road, las vegas</p>
-                                    <div>
-                                        <small class="flex-fill  mx-2 py-2">Baths</small>
-                                        <small class="flex-fill  mx-2 py-2">Rooms</small>
-                                        <small class="flex-fill  mx-2 py-2">Beds</small>
-                                        <small class="flex-fill  mx-2 py-2">Area</small>
-                                    </div>
-                                    <div class="pb-3">
-                                        <small class="flex-fill text-center mx-2 py-2 "><i class="fa fa-bath  me-2" style="color:#1874A2"></i>2</small>
-                                        <small class="flex-fill text-center  mx-3 py-2"><i class="fa-solid fa-door-open " style="color:#1874A2"></i>3</small>
-                                        <small class="flex-fill text-center  mx-3 py-2"><i class="fa fa-bed  me-2" style="color:#1874A2"></i>3</small>
-                                        <small class="flex-fill text-center  py-2"><i class="fa fa-ruler-combined  me-2" style="color:#1874A2"></i>100 m²</small>
-                                    </div>
-
-                                </div>
-                                <div class="d-flex border-top p-3">
-                                    <h5 class="  px-3" style="color:#1874A2">Tom Willson</h5>
-                                    <h5 class=" px-5" style="color:#1874A2">$350.000</h5>
-                                </div>
-                            </div>
-                        </div>
-
-                         <!-- card -->
-
-                         <div class="col-lg-4 col-md-6 mx-2 my-4" style="border-radius: 15px;box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);max-width: 360px;">
-                            <div class="property-item rounded overflow-hidden">
-                                <div class="position-relative overflow-hidden">
-                                    <a href=""><img class="img-fluid" src="../public/imgs/house-img-1.webp" alt="" id="zoom"></a>
-                                </div>
-                                <div class="p-4 pb-0">
-                                    <div class="bg-custom-color rounded text-white d-inline-block" style="background-color: #1874A2">House</div>
-                                    <a class="d-block h5 mb-2 mt-2" href="" style="color:#1874A2; text-decoration:none">Ample Apartment At Last Floor</a>
-                                    <p><i class="fa fa-map-marker-alt  me-2" style="color:#1874A2"></i>West flaminggo road, las vegas</p>
-                                    <div>
-                                        <small class="flex-fill  mx-2 py-2">Baths</small>
-                                        <small class="flex-fill  mx-2 py-2">Rooms</small>
-                                        <small class="flex-fill  mx-2 py-2">Beds</small>
-                                        <small class="flex-fill  mx-2 py-2">Area</small>
-                                    </div>
-                                    <div class="pb-3">
-                                        <small class="flex-fill text-center mx-2 py-2 "><i class="fa fa-bath  me-2" style="color:#1874A2"></i>2</small>
-                                        <small class="flex-fill text-center  mx-3 py-2"><i class="fa-solid fa-door-open " style="color:#1874A2"></i>3</small>
-                                        <small class="flex-fill text-center  mx-3 py-2"><i class="fa fa-bed  me-2" style="color:#1874A2"></i>3</small>
-                                        <small class="flex-fill text-center  py-2"><i class="fa fa-ruler-combined  me-2" style="color:#1874A2"></i>100 m²</small>
-                                    </div>
-
-                                </div>
-                                <div class="d-flex border-top p-3">
-                                    <h5 class="  px-3" style="color:#1874A2">Tom Willson</h5>
-                                    <h5 class=" px-5" style="color:#1874A2">$350.000</h5>
-                                </div>
-                            </div>
-                        </div>
-
-                         <!-- card -->
-
-                         <div class="col-lg-4 col-md-6 mx-2 my-4" style="border-radius: 15px;box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);max-width: 360px;">
-                            <div class="property-item rounded overflow-hidden">
-                                <div class="position-relative overflow-hidden">
-                                    <a href=""><img class="img-fluid" src="../public/imgs/house-img-1.webp" alt="" id="zoom"></a>
-                                </div>
-                                <div class="p-4 pb-0">
-                                    <div class="bg-custom-color rounded text-white d-inline-block" style="background-color: #1874A2">House</div>
-                                    <a class="d-block h5 mb-2 mt-2" href="" style="color:#1874A2; text-decoration:none">Ample Apartment At Last Floor</a>
-                                    <p><i class="fa fa-map-marker-alt  me-2" style="color:#1874A2"></i>West flaminggo road, las vegas</p>
-                                    <div>
-                                        <small class="flex-fill  mx-2 py-2">Baths</small>
-                                        <small class="flex-fill  mx-2 py-2">Rooms</small>
-                                        <small class="flex-fill  mx-2 py-2">Beds</small>
-                                        <small class="flex-fill  mx-2 py-2">Area</small>
-                                    </div>
-                                    <div class="pb-3">
-                                        <small class="flex-fill text-center mx-2 py-2 "><i class="fa fa-bath  me-2" style="color:#1874A2"></i>2</small>
-                                        <small class="flex-fill text-center  mx-3 py-2"><i class="fa-solid fa-door-open " style="color:#1874A2"></i>3</small>
-                                        <small class="flex-fill text-center  mx-3 py-2"><i class="fa fa-bed  me-2" style="color:#1874A2"></i>3</small>
-                                        <small class="flex-fill text-center  py-2"><i class="fa fa-ruler-combined  me-2" style="color:#1874A2"></i>100 m²</small>
-                                    </div>
-
-                                </div>
-                                <div class="d-flex border-top p-3">
-                                    <h5 class="  px-3" style="color:#1874A2">Tom Willson</h5>
-                                    <h5 class=" px-5" style="color:#1874A2">$350.000</h5>
-                                </div>
-                            </div>
-                        </div>
-
-                         <!-- card -->
-
-                         <div class="col-lg-4 col-md-6 mx-2 my-4" style="border-radius: 15px;box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);max-width: 360px;">
-                            <div class="property-item rounded overflow-hidden">
-                                <div class="position-relative overflow-hidden">
-                                    <a href=""><img class="img-fluid" src="../public/imgs/house-img-1.webp" alt="" id="zoom"></a>
-                                </div>
-                                <div class="p-4 pb-0">
-                                    <div class="bg-custom-color rounded text-white d-inline-block" style="background-color: #1874A2">House</div>
-                                    <a class="d-block h5 mb-2 mt-2" href="" style="color:#1874A2; text-decoration:none">Ample Apartment At Last Floor</a>
-                                    <p><i class="fa fa-map-marker-alt  me-2" style="color:#1874A2"></i>West flaminggo road, las vegas</p>
-                                    <div>
-                                        <small class="flex-fill  mx-2 py-2">Baths</small>
-                                        <small class="flex-fill  mx-2 py-2">Rooms</small>
-                                        <small class="flex-fill  mx-2 py-2">Beds</small>
-                                        <small class="flex-fill  mx-2 py-2">Area</small>
-                                    </div>
-                                    <div class="pb-3">
-                                        <small class="flex-fill text-center mx-2 py-2 "><i class="fa fa-bath  me-2" style="color:#1874A2"></i>2</small>
-                                        <small class="flex-fill text-center  mx-3 py-2"><i class="fa-solid fa-door-open " style="color:#1874A2"></i>3</small>
-                                        <small class="flex-fill text-center  mx-3 py-2"><i class="fa fa-bed  me-2" style="color:#1874A2"></i>3</small>
-                                        <small class="flex-fill text-center  py-2"><i class="fa fa-ruler-combined  me-2" style="color:#1874A2"></i>100 m²</small>
-                                    </div>
-
-                                </div>
-                                <div class="d-flex border-top p-3">
-                                    <h5 class="  px-3" style="color:#1874A2">Tom Willson</h5>
-                                    <h5 class=" px-5" style="color:#1874A2">$350.000</h5>
-                                </div>
-                            </div>
-                        </div>
-            <!-- property-cards-end -->
+                                        <div class="container py-5   ">
 
 
-          
+
+                                            <div class="tab-content ">
+                                                <div class=" p-0  ">
+                                                    <div class="row ">
+                                                        <?php
+
+
+                                                        use App\services\PropertyServices;
+
+                                                        require '../vendor/autoload.php';
+
+                                                        $propertyService = new PropertyServices();
+                                                        $properties = $propertyService->getAllPropreties();
+                                                        foreach ($properties as $property) {
+                                                        ?>
+
+                                                            <!-- card -->
+
+
+                                                            <div class="col-lg-4 col-md-6 mx-2 my-4" style="border-radius: 15px;box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);max-width: 360px;">
+                                                                <div class="property-item rounded overflow-hidden">
+                                                                    <div class="position-relative overflow-hidden">
+                                                                        <a href=""><img class="img-fluid" src="/public/upload/<?php echo $property['imgUrl'] ?>" alt="" id="zoom"></a>
+                                                                    </div>
+                                                                    <div class="p-4 pb-0">
+                                                                        <div class="bg-custom-color rounded text-white d-inline-block" style="background-color: #1874A2"><?php echo $property['type']; ?></div>
+                                                                        <a class="d-block h5 mb-2 mt-2" href="" style="color:#1874A2; text-decoration:none"><?php echo $property['description']; ?></a>
+                                                                        <p><i class="fa fa-map-marker-alt  me-2" style="color:#1874A2"></i><?php echo $property['adress']; ?></p>
+                                                                        <div>
+                                                                            <small class="flex-fill  mx-2 py-2">Baths</small>
+                                                                            <small class="flex-fill  mx-2 py-2">Rooms</small>
+                                                                            <small class="flex-fill  mx-2 py-2">Area</small>
+                                                                        </div>
+                                                                        <div class="pb-3">
+                                                                            <small class="flex-fill text-center mx-2 py-2 "><i class="fa fa-bath  me-2" style="color:#1874A2"></i><?php echo $property['shower']; ?></small>
+                                                                            <small class="flex-fill text-center  mx-3 py-2"><i class="fa-solid fa-door-open " style="color:#1874A2"></i><?php echo $property['room']; ?></small>
+                                                                            <small class="flex-fill text-center  py-2"><i class="fa fa-ruler-combined  me-2" style="color:#1874A2"></i><?php echo $property['surface']; ?></small>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="d-flex border-top p-3">
+                                                                        <h5 class="  px-3" style="color:#1874A2">Tom Willson</h5>
+
+                                                                        <h5 class=" px-5" style="color:#1874A2">$350.000</h5>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- card -->
+
+                                                            <div class="col-lg-4 col-md-6 mx-2 my-4" style="border-radius: 15px;box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);max-width: 360px;">
+                                                                <div class="property-item rounded overflow-hidden">
+                                                                    <div class="position-relative overflow-hidden">
+                                                                        <a href=""><img class="img-fluid" src="../public/imgs/house-img-1.webp" alt="" id="zoom"></a>
+                                                                    </div>
+                                                                    <div class="p-4 pb-0">
+                                                                        <div class="bg-custom-color rounded text-white d-inline-block" style="background-color: #1874A2">House</div>
+                                                                        <a class="d-block h5 mb-2 mt-2" href="" style="color:#1874A2; text-decoration:none">Ample Apartment At Last Floor</a>
+                                                                        <p><i class="fa fa-map-marker-alt  me-2" style="color:#1874A2"></i>West flaminggo road, las vegas</p>
+                                                                        <div>
+                                                                            <small class="flex-fill  mx-2 py-2">Baths</small>
+                                                                            <small class="flex-fill  mx-2 py-2">Rooms</small>
+                                                                            <small class="flex-fill  mx-2 py-2">Beds</small>
+                                                                            <small class="flex-fill  mx-2 py-2">Area</small>
+                                                                        </div>
+                                                                        <div class="pb-3">
+                                                                            <small class="flex-fill text-center mx-2 py-2 "><i class="fa fa-bath  me-2" style="color:#1874A2"></i>2</small>
+                                                                            <small class="flex-fill text-center  mx-3 py-2"><i class="fa-solid fa-door-open " style="color:#1874A2"></i>3</small>
+                                                                            <small class="flex-fill text-center  mx-3 py-2"><i class="fa fa-bed  me-2" style="color:#1874A2"></i>3</small>
+                                                                            <small class="flex-fill text-center  py-2"><i class="fa fa-ruler-combined  me-2" style="color:#1874A2"></i>100 m²</small>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="d-flex border-top p-3">
+                                                                        <h5 class="  px-3" style="color:#1874A2">Tom Willson</h5>
+                                                                        <h5 class=" px-5" style="color:#1874A2">$350.000</h5>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <h5 class=" px-5" style="color:#1874A2"><?php echo $property['price']; ?></h5>
+                                                    </div>
+                                                    <a href="delete?id=<?php echo $property['id'] ?>"><i class='fas fa-trash-alt btndelete' style='cursor: pointer; '></i>Delete</a>
+                                                <?php } ?>
+                                                </div>
+                                            </div>
+
+
+
+                                            <!-- card -->
+
+
+                                            <div class="col-lg-4 col-md-6 mx-2 my-4" style="border-radius: 15px;box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);max-width: 360px;">
+                                                <div class="property-item rounded overflow-hidden">
+                                                    <div class="position-relative overflow-hidden">
+                                                        <a href=""><img class="img-fluid" src="../public/imgs/house-img-1.webp" alt="" id="zoom"></a>
+                                                    </div>
+                                                    <div class="p-4 pb-0">
+                                                        <div class="bg-custom-color rounded text-white d-inline-block" style="background-color: #1874A2">House</div>
+                                                        <a class="d-block h5 mb-2 mt-2" href="" style="color:#1874A2; text-decoration:none">Ample Apartment At Last Floor</a>
+                                                        <p><i class="fa fa-map-marker-alt  me-2" style="color:#1874A2"></i>West flaminggo road, las vegas</p>
+                                                        <div>
+                                                            <small class="flex-fill  mx-2 py-2">Baths</small>
+                                                            <small class="flex-fill  mx-2 py-2">Rooms</small>
+                                                            <small class="flex-fill  mx-2 py-2">Beds</small>
+                                                            <small class="flex-fill  mx-2 py-2">Area</small>
+                                                        </div>
+                                                        <div class="pb-3">
+                                                            <small class="flex-fill text-center mx-2 py-2 "><i class="fa fa-bath  me-2" style="color:#1874A2"></i>2</small>
+                                                            <small class="flex-fill text-center  mx-3 py-2"><i class="fa-solid fa-door-open " style="color:#1874A2"></i>3</small>
+                                                            <small class="flex-fill text-center  mx-3 py-2"><i class="fa fa-bed  me-2" style="color:#1874A2"></i>3</small>
+                                                            <small class="flex-fill text-center  py-2"><i class="fa fa-ruler-combined  me-2" style="color:#1874A2"></i>100 m²</small>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="d-flex border-top p-3">
+                                                        <h5 class="  px-3" style="color:#1874A2">Tom Willson</h5>
+                                                        <h5 class=" px-5" style="color:#1874A2">$350.000</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- card -->
+
+                                            <div class="col-lg-4 col-md-6 mx-2 my-4" style="border-radius: 15px;box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);max-width: 360px;">
+                                                <div class="property-item rounded overflow-hidden">
+                                                    <div class="position-relative overflow-hidden">
+                                                        <a href=""><img class="img-fluid" src="../public/imgs/house-img-1.webp" alt="" id="zoom"></a>
+                                                    </div>
+                                                    <div class="p-4 pb-0">
+                                                        <div class="bg-custom-color rounded text-white d-inline-block" style="background-color: #1874A2">House</div>
+                                                        <a class="d-block h5 mb-2 mt-2" href="" style="color:#1874A2; text-decoration:none">Ample Apartment At Last Floor</a>
+                                                        <p><i class="fa fa-map-marker-alt  me-2" style="color:#1874A2"></i>West flaminggo road, las vegas</p>
+                                                        <div>
+                                                            <small class="flex-fill  mx-2 py-2">Baths</small>
+                                                            <small class="flex-fill  mx-2 py-2">Rooms</small>
+                                                            <small class="flex-fill  mx-2 py-2">Beds</small>
+                                                            <small class="flex-fill  mx-2 py-2">Area</small>
+                                                        </div>
+                                                        <div class="pb-3">
+                                                            <small class="flex-fill text-center mx-2 py-2 "><i class="fa fa-bath  me-2" style="color:#1874A2"></i>2</small>
+                                                            <small class="flex-fill text-center  mx-3 py-2"><i class="fa-solid fa-door-open " style="color:#1874A2"></i>3</small>
+                                                            <small class="flex-fill text-center  mx-3 py-2"><i class="fa fa-bed  me-2" style="color:#1874A2"></i>3</small>
+                                                            <small class="flex-fill text-center  py-2"><i class="fa fa-ruler-combined  me-2" style="color:#1874A2"></i>100 m²</small>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="d-flex border-top p-3">
+                                                        <h5 class="  px-3" style="color:#1874A2">Tom Willson</h5>
+                                                        <h5 class=" px-5" style="color:#1874A2">$350.000</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- card -->
+
+                                            <div class="col-lg-4 col-md-6 mx-2 my-4" style="border-radius: 15px;box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);max-width: 360px;">
+                                                <div class="property-item rounded overflow-hidden">
+                                                    <div class="position-relative overflow-hidden">
+                                                        <a href=""><img class="img-fluid" src="../public/imgs/house-img-1.webp" alt="" id="zoom"></a>
+                                                    </div>
+                                                    <div class="p-4 pb-0">
+                                                        <div class="bg-custom-color rounded text-white d-inline-block" style="background-color: #1874A2">House</div>
+                                                        <a class="d-block h5 mb-2 mt-2" href="" style="color:#1874A2; text-decoration:none">Ample Apartment At Last Floor</a>
+                                                        <p><i class="fa fa-map-marker-alt  me-2" style="color:#1874A2"></i>West flaminggo road, las vegas</p>
+                                                        <div>
+                                                            <small class="flex-fill  mx-2 py-2">Baths</small>
+                                                            <small class="flex-fill  mx-2 py-2">Rooms</small>
+                                                            <small class="flex-fill  mx-2 py-2">Beds</small>
+                                                            <small class="flex-fill  mx-2 py-2">Area</small>
+                                                        </div>
+                                                        <div class="pb-3">
+                                                            <small class="flex-fill text-center mx-2 py-2 "><i class="fa fa-bath  me-2" style="color:#1874A2"></i>2</small>
+                                                            <small class="flex-fill text-center  mx-3 py-2"><i class="fa-solid fa-door-open " style="color:#1874A2"></i>3</small>
+                                                            <small class="flex-fill text-center  mx-3 py-2"><i class="fa fa-bed  me-2" style="color:#1874A2"></i>3</small>
+                                                            <small class="flex-fill text-center  py-2"><i class="fa fa-ruler-combined  me-2" style="color:#1874A2"></i>100 m²</small>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="d-flex border-top p-3">
+                                                        <h5 class="  px-3" style="color:#1874A2">Tom Willson</h5>
+                                                        <h5 class=" px-5" style="color:#1874A2">$350.000</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- card -->
+
+                                            <div class="col-lg-4 col-md-6 mx-2 my-4" style="border-radius: 15px;box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);max-width: 360px;">
+                                                <div class="property-item rounded overflow-hidden">
+                                                    <div class="position-relative overflow-hidden">
+                                                        <a href=""><img class="img-fluid" src="../public/imgs/house-img-1.webp" alt="" id="zoom"></a>
+                                                    </div>
+                                                    <div class="p-4 pb-0">
+                                                        <div class="bg-custom-color rounded text-white d-inline-block" style="background-color: #1874A2">House</div>
+                                                        <a class="d-block h5 mb-2 mt-2" href="" style="color:#1874A2; text-decoration:none">Ample Apartment At Last Floor</a>
+                                                        <p><i class="fa fa-map-marker-alt  me-2" style="color:#1874A2"></i>West flaminggo road, las vegas</p>
+                                                        <div>
+                                                            <small class="flex-fill  mx-2 py-2">Baths</small>
+                                                            <small class="flex-fill  mx-2 py-2">Rooms</small>
+                                                            <small class="flex-fill  mx-2 py-2">Beds</small>
+                                                            <small class="flex-fill  mx-2 py-2">Area</small>
+                                                        </div>
+                                                        <div class="pb-3">
+                                                            <small class="flex-fill text-center mx-2 py-2 "><i class="fa fa-bath  me-2" style="color:#1874A2"></i>2</small>
+                                                            <small class="flex-fill text-center  mx-3 py-2"><i class="fa-solid fa-door-open " style="color:#1874A2"></i>3</small>
+                                                            <small class="flex-fill text-center  mx-3 py-2"><i class="fa fa-bed  me-2" style="color:#1874A2"></i>3</small>
+                                                            <small class="flex-fill text-center  py-2"><i class="fa fa-ruler-combined  me-2" style="color:#1874A2"></i>100 m²</small>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="d-flex border-top p-3">
+                                                        <h5 class="  px-3" style="color:#1874A2">Tom Willson</h5>
+                                                        <h5 class=" px-5" style="color:#1874A2">$350.000</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- property-cards-end -->
+
+
+
+
+
+                                            <!-- property-cards-end -->
+
+
     </main>
 
 
@@ -265,5 +320,3 @@
     <!-- bootstrap js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
-
-

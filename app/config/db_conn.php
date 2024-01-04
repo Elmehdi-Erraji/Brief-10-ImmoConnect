@@ -46,3 +46,4 @@ $connection = db_conn::getConnection();
 if(!$connection){
     echo "Db is not connected";
 }
+

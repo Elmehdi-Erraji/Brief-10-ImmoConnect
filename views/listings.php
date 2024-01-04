@@ -1,6 +1,6 @@
 <?php
 
-use app\config\db_conn;
+use App\config\db_conn;
 
 require __DIR__ . '/../vendor/autoload.php';
 

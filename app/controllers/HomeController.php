@@ -26,4 +26,11 @@ class HomeController{
     }
 
 
+    public function new_property(){
+
+        include __DIR__ .'../../../views/properties/new_property.php';
+    }
+    // public function list(){
+    //     include __DIR__ .'../../../views/list.php';
+    // }
 }
