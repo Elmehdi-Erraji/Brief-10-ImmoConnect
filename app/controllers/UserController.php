@@ -62,7 +62,7 @@ class UserController{
         // Get user details by email
         $user = $userServices->getUserByEmail($email);
 
-        if ($user['PASSWORD'] == $password) {
+        if ($user['password'] == $password) {
             // Start a session
             session_start();
 
@@ -105,29 +105,7 @@ class UserController{
 
 
 
-    public function fetchUsers() {
-        try {
-            $dbConnection = db_conn::getConnection();
-            
-            // Prepare SQL query
-            $query = "SELECT * FROM users";
-    
-            // Execute the query using PDO
-            $statement = $dbConnection->query($query);
-    
-            // Fetch data as associative array
-            $data = $statement->fetchAll(PDO::FETCH_ASSOC);
-    
-            // Set response header to JSON
-            header('Content-Type: application/json');
-    
-            // Output data as JSON
-            echo json_encode($data);
-        } catch (PDOException $e) {
-            // Handle any database connection errors
-            die("Query failed: " . $e->getMessage());
-        }
-    }
+  
 
 }
 

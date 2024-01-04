@@ -87,7 +87,7 @@ class UserServices implements UserDAO{
             return null;
         }
     }
-    public function getAllUsers() {
+    public  function getAllUsers() {
         try {
             $query = "SELECT * FROM users";
             $stmt = $this->db->query($query);

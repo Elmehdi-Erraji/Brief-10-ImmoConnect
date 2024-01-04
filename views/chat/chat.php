@@ -596,7 +596,7 @@ use App\services\UserServices;
                 <i class="ri-mail-line"></i>
                     <span> Messages </span>
                 </a>
-            </li>
+             </li>
     
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarProjects" aria-expanded="false" aria-controls="sidebarProjects" class="side-nav-link">

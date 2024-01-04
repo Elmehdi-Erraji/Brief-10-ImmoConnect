@@ -8,17 +8,17 @@ $router->setRoutes([
     'GET'=>[
         ''=>['HomeController' , 'index'],
         'home'=>['HomeController' , 'index'],
-        'users'=>['HomeController' , 'user'],
+        'users'=>['MessageController' , 'user'],
         'login'=>['AuthController' , 'signin'],
         'register'=>['AuthController' , 'signup'],
-        'message'=>['HomeController', 'allMsgs'],
+        'message'=>['MessageController', 'allMsgs'],
 
         
     ],
     'POST'=>[
         'register'=>['UserController' , 'register'],
         'login'=>['UserController' , 'login'],
-        'insertMsg'=>['HomeController', 'insertMsg'],
+        'insertMsg'=>['MessageController', 'insertMsg'],
         
     ]
 ]);
