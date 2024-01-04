@@ -91,7 +91,7 @@
 
                                                         use App\services\PropertyServices;
 
-                                                        require '../vendor/autoload.php';
+                                                        require '../../vendor/autoload.php';
 
                                                         $propertyService = new PropertyServices();
                                                         $properties = $propertyService->getAllPropreties();
