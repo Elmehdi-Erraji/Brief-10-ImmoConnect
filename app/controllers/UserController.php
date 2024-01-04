@@ -141,7 +141,7 @@ public function login() {
         // Redirect with error message for invalid credentials
         session_start();
         $_SESSION['login_error'] = 'Invalid credentials. Please try again.';
-        header('Location: test');
+        header('Location: login');
         exit();
     }
 }
