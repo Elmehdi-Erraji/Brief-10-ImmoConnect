@@ -132,7 +132,7 @@
                                             <!-- settings -->
                                             <div id="edit-profile" class="tab-pane active">
                                                 <div class="user-profile-content">
-                                                    <form action="" method="POST" id="userForm">
+                                                    <form action="updateProfile" method="POST" id="userForm" enctype="multipart/form-data">
                                                     <input type="hidden" name="user_id" value="<?php echo $user->getId(); ?>">
                                                         <div class="row row-cols-sm-2 row-cols-1">
                                                             <div class="mb-2">

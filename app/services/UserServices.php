@@ -175,7 +175,49 @@ class UserServices implements UserDAO{
 
 
 
-
+    public function updateUserprofile(User $user) {
+        $userId = $user->getId();
+        $username = $user->getUsername();
+        $email = $user->getEmail();
+        $phone_number = $user->getPhoneNumber();
+        $password = $user->getPassword(); // Assuming this returns the new password if provided
+        $hashedPassword = !empty($password) ? password_hash($password, PASSWORD_DEFAULT) : null; // Hash the new password if provided
+        
+        // Handle image update logic similar to the addUser method
+        $image = $user->getImage(); // Get the image path from the User object or set to null if not provided
+        
+        // Other attributes like role, status can be fetched similarly
+        
+        $connection = db_conn::getConnection();
+        $connection->beginTransaction(); // Begin a transaction
+    
+        try {
+            // Construct the UPDATE query for updating user information
+            $updateUserQuery = "UPDATE users SET username=?, email=?, phone_number=?, password=?, image=? WHERE id=?";
+            $stmtUpdateUser = $connection->prepare($updateUserQuery);
+    
+            if (!$stmtUpdateUser) {
+                return false; // Failed to prepare statement
+            }
+    
+            // Bind parameters and execute the update query
+            $successUpdateUser = $stmtUpdateUser->execute([$username, $email, $phone_number, $hashedPassword, $image, $userId]);
+    
+            if ($successUpdateUser) {
+                $connection->commit();
+                return true; // User updated successfully
+            } else {
+                $connection->rollBack();
+                return false; // User update failed
+            }
+        } catch (PDOException $e) {
+            $connection->rollBack();
+            // Handle or log the exception
+            return false; // Return false indicating failure due to exception
+        }
+    }
+    
+    
 
 
 

@@ -54,7 +54,7 @@ class UserController{
             $role_id = $postData['user_role'] ?? '';
             $status = $postData['status'] ?? '';
             $password = $postData['password'] ?? '';
-            // No image-related code here
+            
             $image = $_FILES['user_image'] ?? null;
           // Check if an image was uploaded
         if ($image && $image['error'] === UPLOAD_ERR_OK) {
@@ -90,7 +90,6 @@ class UserController{
         }
     }
 }
-
 
 
 
@@ -256,6 +255,83 @@ public function login() {
         exit();
             }
         }
+
+
+
+
+
+
+
+
+        public function updateProfile() {
+            $postData = $_POST ?? [];
+            
+        
+             
+                $userId = $postData['user_id'] ?? '';
+                $username = $postData['username'] ?? '';
+                $email = $postData['email'] ?? '';
+                $phone_number = $postData['phone'] ?? '';
+                $password = $postData['password'] ?? '';
+                
+                // Handle image upload
+                $image = $_FILES['user_image'] ?? null;
+                $imagePath = null;
+                if ($image && $image['error'] === UPLOAD_ERR_OK) {
+                    $uploadDirectory = '../../public/assets/images/users/';
+                    $imageName = basename($image['name']);
+                    $uploadedImagePath = $uploadDirectory . $imageName;
+                    if (move_uploaded_file($image['tmp_name'], $uploadedImagePath)) {
+                        $imagePath = $uploadedImagePath;
+                    }
+                }
+                
+                $userService = new UserServices();
+        
+                // Get the user object by ID to check if it exists
+                $existingUser = $userService->getUserById($userId);
+                
+                if ($existingUser) {
+                    // Update the user object with the new data
+                    $existingUser->setUsername($username);
+                    $existingUser->setEmail($email);
+                    $existingUser->setPhoneNumber($phone_number);
+                    $existingUser->setPassword( $password); // Assuming the method exists
+                    $existingUser->setImage($imagePath);
+                    
+                    // Update the user in the database
+                    $result = $userService->updateUserprofile($existingUser);
+        
+                    if ($result) {
+                        // User updated successfully
+                        header('Location: profile');
+                        exit();
+                    } else {
+                        echo "Failed to update user.";
+                    }
+                } else {
+                    echo "User not found.";
+                }
+            
+        }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
      
