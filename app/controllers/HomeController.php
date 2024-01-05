@@ -4,7 +4,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 
 class HomeController{
     public function index(){
-        include __DIR__ .'../../../views/profile.php';
+        include __DIR__ .'../../../views/admin/profile.php';
     }
  
     public function user(){
