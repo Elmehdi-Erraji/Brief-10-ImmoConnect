@@ -536,7 +536,7 @@ img{ max-width:100%;}
                             <i class="ri-logout-box-line fs-18 align-middle me-1"></i>
                             <span>Logout</span>
                         </a>
-                    </div>
+                    </div>0
                 </li>
             </ul>
         </div>
