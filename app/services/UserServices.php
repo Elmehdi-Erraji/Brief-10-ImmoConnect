@@ -48,6 +48,23 @@ class UserServices implements UserDAO{
         }
    }
 
+
+//    public function getUserByidmesage($id) {
+//     $query = "SELECT * FROM users WHERE id = :id";
+
+//     try {
+//         $stmt = $this->db->prepare($query);
+//         $stmt->bindParam(':id', $id);
+//         $stmt->execute();
+//         $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+//         return $user ? $user : null; // Return the user details as an associative array or null if not found
+//     } catch (PDOException $e) {
+//         // Handle the exception or log the error
+//         return null; // Return null if an exception occurs
+//     }
+// }
+    
    
    public function updateUser(User $user) {
     // var_dump($user);
@@ -76,8 +93,10 @@ class UserServices implements UserDAO{
     } catch (PDOException $e) {
         // Handle exceptions, log errors, or return a default value if something goes wrong
         return false; // Default value if an error occurs
+
     }
 }
+    
    
 
 
@@ -99,6 +118,21 @@ class UserServices implements UserDAO{
             return null;
         }
     }
+
+    public  function getAllUsers() {
+        try {
+            $query = "SELECT * FROM users";
+            $stmt = $this->db->query($query);
+            $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            return $users; // Return an array of users' details
+        } catch (PDOException $e) {
+            // Handle the exception appropriately
+            echo "Error: " . $e->getMessage();
+            return null;
+        }
+    }
+
 
 
 
@@ -218,13 +252,6 @@ class UserServices implements UserDAO{
     }
     
     
-
-
-
-
-
-
-    
     public function deleteUser($userId) {
         $connection = db_conn::getConnection();
 
@@ -297,5 +324,6 @@ class UserServices implements UserDAO{
     }
 
 }
+
     
 }

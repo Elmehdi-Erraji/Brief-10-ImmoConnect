@@ -8,8 +8,8 @@ class Message{
     private $sendTime;
     private $reciever_id;
     
-    public function __construct($id, $message, $sendTime, $sender_id, $reciever_id){
-        $this->id = $id;
+    public function __construct( $message, $sendTime, $sender_id, $reciever_id){
+       
         $this->message = $message;
         $this->sendTime = $sendTime;
         $this->sender_id = $sender_id;

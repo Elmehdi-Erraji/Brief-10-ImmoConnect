@@ -8,9 +8,10 @@ $router->setRoutes([
     'GET'=>[
         ''=>['HomeController' , 'index'],
         'home'=>['HomeController' , 'index'],
-        'users'=>['HomeController' , 'user'],
+        'users'=>['MessageController' , 'user'],
         'login'=>['AuthController' , 'signin'],
         'register'=>['AuthController' , 'signup'],
+        'message'=>['MessageController', 'allMsgs'],
         'forgetPassword'=>['AuthController' , 'forgetPassword'],
         'dashboard'=>['AuthController' , 'dashboard'],
         'fetchUsers'=>['UserController' , 'fetchUsers'],
@@ -25,17 +26,17 @@ $router->setRoutes([
         'deleteProperty'=>['PropertyController','delete'],
         'message'=>['MessageController', 'allMsgs'],
         
-
+        
     ],
     'POST'=>[
         'addUser'=>['UserController' , 'addUser'],
         'register'=>['UserController' , 'register'],
         'login'=>['UserController' , 'login'],
+        'insertMsg'=>['MessageController', 'insertMsg'],
         'updateUser'=>['UserController' , 'updateUser'],
         'updateProfile'=>['UserController' , 'updateProfile'],
         'insert'=>['PropertyController' , 'insert'],
-        'insertMsg'=>['HomeController', 'insertMsg'],
-
+        'insertMsg'=>['MessageController', 'insertMsg'],
         
     ]
     

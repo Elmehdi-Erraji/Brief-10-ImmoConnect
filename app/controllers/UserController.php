@@ -43,7 +43,11 @@ class UserController{
         }
     }
     }
-   
+    public function getUsers() {
+        $users = new UserServices();
+        $all= $users->getAllUsers();
+        return $all;
+    }
 
     public function addUser(){
         if (isset($_POST['addUser'])) {
@@ -129,6 +133,11 @@ public function login() {
             } else if ($role === 2 || $role === 3) {
                 header('Location: profile');
                 exit();
+
+            } else {
+                header('Location: users');
+                exit(); 
+               
             }
         } else {
            
@@ -196,9 +205,6 @@ public function login() {
         // Include the view file and pass the variables
         return [$userCount];
         }
-
-
-
 
 
         public function updateUser() {
@@ -316,24 +322,6 @@ public function login() {
         }
         
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
      
     public function fetchUsers() {
         try {
@@ -364,12 +352,7 @@ public function login() {
             exit; // Ensure no further output after sending JSON error response
         }
     }
-
-    public function userUpdate(){
-
-    }
  
-    
 
 }
 
